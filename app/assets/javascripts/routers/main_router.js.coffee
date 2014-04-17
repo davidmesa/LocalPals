@@ -8,8 +8,8 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
   index: ->
     @headerView()
     view = new LocalPals.Views.HomeIndex()
-    $('#container').html(view.render.el)
+    $('#container').html(view.render().el)
 
   headerView: ->
-    headerView = new LocalPals.Views.Header
+    headerView = new LocalPals.Views.Header()
     $('#header').html(headerView.render().el)

@@ -10,17 +10,16 @@
  *
  *= require_self
  *= require_tree .
- *= require bootstrap
  *= require bootstrap-datetimepicker
  */
-
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
 @import url(http://fonts.googleapis.com/css?family=Bubbler+One);
 /* CSS Document */
 
 body{
-    background-color:#FFF6EB
+    background-color:#FFF6EB;
+    overflow-x: hidden;
 }
 
 .lp-navbar-inverse
@@ -42,14 +41,15 @@ body{
     position:fixed;
     top:40px;
     left:0px;
-    height:700px;
-    width:150px;
+    height:100%;
+    width:170px;
     background-color:#F4C56B;
 }
 
 .content{
-    margin-left:165px;
+    margin-left:170px;
     margin-top:50px;
+    overflow-x: hidden;
 }
 
 #add-city{
@@ -76,6 +76,7 @@ body{
 .title-city{
     text-align:center;
     height:45px;
+    margin-left: 15px;
 }
 
 .title-city > h1{
@@ -94,6 +95,19 @@ body{
     opacity: 1;
 }
 
+.local-activities #imagen:hover .img-activity{
+    opacity: 1;
+}
+.local-activities #imagen{
+    height: 250px;
+    width:250px;
+}
+.local-activities #imagen .img-activity{
+    opacity: 1;
+    height: 200px;
+    width: 200px;
+}
+
 .table-sidebar{
     margin-top:10px;
 
@@ -103,11 +117,17 @@ body{
     color:#000;
 }
 
+.table-sidebar > h5 {
+    color:#000;
+    margin-left: 7px;
+}
+
 .filtro{
-    margin-top:40px;
+    margin-top: 7px;
     margin-left:10px;
     margin-right:10px;
 }
+
 
 .table-sidebar > li:hover > a {
     background:#D9AF5F;
@@ -123,7 +143,7 @@ body{
 
 #activity-header
 {
-    margin-top: 10%;
+    margin-top: 5%;
     height: 340px;
     width: 1200px;
 
@@ -171,24 +191,27 @@ nombre, .nombre
 }
 
 #btn-going{
-    position:fixed;
+    position:relative;
     opacity:0;
     margin-top: 115px;
     margin-left: 80px;
+    margin-bottom: -100%;
 }
 
 #btn-delete{
-    position:fixed;
+    position:relative;
     opacity:0;
     margin-top: 115px;
     margin-left: 80px;
+    margin-bottom: 100%;
 }
 
 #btn-photo{
-    position:fixed;
+    position:relative;
     opacity:0;
     margin-top: 115px;
     margin-left: 55px;
+    margin-bottom: -100%;
 }
 
 #imagen:hover .btn-success {
@@ -201,8 +224,15 @@ nombre, .nombre
     opacity: 1;
 }
 
+#imagen-profile:hover .btn-primary {
+    opacity: 1;
+}
 
 #imagen:hover .img-activity{
+    opacity: 0.5;
+}
+
+#imagen-profile:hover .img-local-profile{
     opacity: 0.5;
 }
 
@@ -211,13 +241,22 @@ nombre, .nombre
 }
 
 .img-pal{
-    margin-top:55%;
     margin-left:55%;
+    margin-top: 55%;
     position:relative;
     border-radius: 50%;
     height: 150px;
     width: 150px;
     overflow: hidden;
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+}
+
+.img-local-profile{
+    border-radius: 50%;
+    height: 270px;
+    width: 270px;
+    position: absolute;
     -webkit-box-shadow: 0 0 20px #000;
     box-shadow: 0 0 20px #000;
 }
@@ -331,4 +370,30 @@ img.logo {
     margin-bottom:5%;
     background-color:#F4C56B;
     color:#000;
+}
+
+.content-activity {
+    overflow-x: hidden;
+    margin-left: 170px;
+    margin-top: 50px;
+}
+
+#imagen-profile {
+    height: 310px;
+    width: 310px;
+}
+
+.local-activities {
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    margin-top:15px;
+}
+
+.index-content {
+    overflow-x: hidden;
+}
+
+#local-form {
+    margin-top: 65px;
 }
