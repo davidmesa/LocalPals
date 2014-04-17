@@ -36,7 +36,6 @@ end
 
 #Backbone para front-end
 gem 'backbone-on-rails'
-gem 'eco-source', '~> 1.1.0.rc.1'
 
 #Bootstrap
 gem 'bootstrap-sass'

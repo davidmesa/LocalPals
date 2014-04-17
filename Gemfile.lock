@@ -131,7 +131,6 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap3-datetimepicker-rails (~> 3.0.0)
   coffee-rails (~> 4.0.0)
-  eco-source (~> 1.1.0.rc.1)
   jbuilder (~> 1.2)
   jquery-rails
   momentjs-rails (~> 2.5.0)
