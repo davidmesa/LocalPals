@@ -10,4 +10,326 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
+ *= require bootstrap-datetimepicker
  */
+
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+@import url(http://fonts.googleapis.com/css?family=Bubbler+One);
+/* CSS Document */
+
+body{
+    background-color:#FFF6EB
+}
+
+.lp-navbar-inverse
+{
+    background-color: #B28249;
+    border-color: #A67944;
+}
+
+.lp-navbar-toggle {
+    border-color: #755630
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #755630;
+}
+
+.sidebar{
+    position:fixed;
+    top:40px;
+    left:0px;
+    height:700px;
+    width:150px;
+    background-color:#F4C56B;
+}
+
+.content{
+    margin-left:165px;
+    margin-top:50px;
+}
+
+#add-city{
+    background-image:url(../img/addcity.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+    text-align:center;
+    margin-bottom:-20px;
+}
+
+.btn-add-city{
+    margin-top:20px;
+    margin-bottom:30px;
+    background-color:#F4C56B;
+    color:#000;
+}
+
+.btn-add-city:active{
+    background-color:#000;
+    color:#FFF;
+}
+
+.title-city{
+    text-align:center;
+    height:45px;
+}
+
+.title-city > h1{
+    color:#fff;
+    text-shadow: 0 0 2px #000;
+}
+
+.pals{
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+    margin-top:15px;
+}
+
+.pals #imagen:hover .img-activity{
+    opacity: 1;
+}
+
+.table-sidebar{
+    margin-top:10px;
+
+}
+
+.table-sidebar > li > a {
+    color:#000;
+}
+
+.filtro{
+    margin-top:40px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.table-sidebar > li:hover > a {
+    background:#D9AF5F;
+}
+
+.sidebar > hr {
+    display: block; height: 1px;
+    border: 0; border-top: 1px solid #D9AF5F;
+    margin: 1em 0; padding: 0;
+}
+
+/* MACAAA */
+
+#activity-header
+{
+    margin-top: 10%;
+    height: 340px;
+    width: 1200px;
+
+}
+
+#info-pal
+{
+    -webkit-transform: rotate(355deg);
+    font-family: 'Special Elite', cursive;
+}
+
+.info-tag{
+    background-image: url(../img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tag-tail {
+    height:238px;
+    margin-left:-20px;
+}
+
+#activity-content
+{
+    margin-top: 50px;
+    background-image: url(../img/notebook.png);
+    background-repeat: no-repeat;
+    background-size:120% auto;
+    font-family: 'Special Elite', cursive;
+}
+
+nombre, .nombre
+{
+    font-size: 50px;
+    font-family: 'Special Elite', cursive;
+}
+
+.img-activity {
+    border-radius: 50%;
+    height: 270px;
+    width: 270px;
+    position: absolute;
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+}
+
+#btn-going{
+    position:fixed;
+    opacity:0;
+    margin-top: 115px;
+    margin-left: 80px;
+}
+
+#btn-delete{
+    position:fixed;
+    opacity:0;
+    margin-top: 115px;
+    margin-left: 80px;
+}
+
+#btn-photo{
+    position:fixed;
+    opacity:0;
+    margin-top: 115px;
+    margin-left: 55px;
+}
+
+#imagen:hover .btn-success {
+    opacity: 1;
+}
+#imagen:hover .btn-danger {
+    opacity: 1;
+}
+#imagen:hover .btn-primary {
+    opacity: 1;
+}
+
+
+#imagen:hover .img-activity{
+    opacity: 0.5;
+}
+
+#activity-cotent > h3{
+    margin-left: 10px;
+}
+
+.img-pal{
+    margin-top:55%;
+    margin-left:55%;
+    position:relative;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+}
+
+.img-local{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+}
+
+#reviews{
+    margin-top:50px;
+}
+.review{
+    margin-top:20px;
+
+}
+
+.comment{
+    background-image: url(../img/txt-bubble.png);
+    background-size:100% 100%;
+}
+.comment > h3{
+    margin-left:40px;
+    font-family: 'Bubbler One', sans-serif;
+}
+
+#imagen {
+    height: 330px;
+    width: 340px;
+}
+
+#contact {
+    margin-top: 30px;
+}
+
+
+
+#titulo {
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+}
+
+img.logo {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    display: block;
+}
+
+#info {
+    height: 350px;
+    background-image: url(../img/info.png);
+    background-size: 100% 350px;
+    background-repeat: no-repeat;
+}
+
+#desc {
+    margin-left: 370px;
+}
+
+#users-login {
+    height: 280px;
+    width: 100%;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+
+/* MACAAA */
+
+/* Sergio */
+#tag-pal
+{
+    background-image: url(../img/tag2.png);
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(355deg);
+    font-family: 'Special Elite', cursive;
+    height: 538px;
+    width: 871px;
+
+
+}
+
+
+#titulo {
+    margin-top: 10%;
+}
+/* Sergio */
+
+#hot-balloon{
+    position:fixed;
+    top:10%;
+    right:2%;
+}
+
+#logo{
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.panel-heading{
+    text-align:center;
+}
+
+.btn-submit{
+    margin-bottom:5%;
+    background-color:#F4C56B;
+    color:#000;
+}
+

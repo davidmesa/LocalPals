@@ -3,7 +3,9 @@ window.LocalPals =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    new LocalPals.Routers.MainRouter()
+    Backbone.history.start()
 
 $(document).ready ->
   LocalPals.initialize()
