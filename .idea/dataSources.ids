@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails LocalPals: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="d0cc5ed2-7ccb-439a-b767-1c3a993c992f">
-    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-    <jdbc-url>jdbc:postgresql:LocalPals_development</jdbc-url>
-    <user-name>LocalPals</user-name>
-    <libraries>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>
-      </library>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-9.2-1002.jdbc4.jar</url>
-      </library>
-    </libraries>
-  </data-source>
   <data-source source="LOCAL" name="Rails LocalPals: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="ffd8147a-5ad9-40b8-96e3-69962f3bd119">
     <jdbc-driver>org.postgresql.Driver</jdbc-driver>
     <jdbc-url>jdbc:postgresql:LocalPals_production</jdbc-url>
@@ -29,6 +16,32 @@
   <data-source source="LOCAL" name="Rails LocalPals: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3f62a9ab-257a-4355-af9f-50750071009a">
     <jdbc-driver>org.postgresql.Driver</jdbc-driver>
     <jdbc-url>jdbc:postgresql:LocalPals_test</jdbc-url>
+    <user-name>LocalPals</user-name>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-9.2-1002.jdbc4.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+  <data-source source="LOCAL" name="Rails LocalPals: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="15115847-2e1d-4497-b874-eb81c18c8641">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/xerial-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>
+      </library>
+    </libraries>
+    <schema name="" catalog=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails LocalPals: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="d0cc5ed2-7ccb-439a-b767-1c3a993c992f">
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql:LocalPals_development</jdbc-url>
     <user-name>LocalPals</user-name>
     <libraries>
       <library>
