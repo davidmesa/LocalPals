@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  about_me: MyText
+  hobbies: MyText
+
+two:
+  about_me: MyText
+  hobbies: MyText
