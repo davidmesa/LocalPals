@@ -1,4 +1,4 @@
-class Parday.Views.FeedPost extends Backbone.View
+class LocalPals.Views.FeedPost extends Backbone.View
 
   className: "imagen"
 

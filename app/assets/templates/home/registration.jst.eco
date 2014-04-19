@@ -4,7 +4,7 @@
             <div id="form">
             	<h1>Want To Meet Fellow Travelers?</h1>
                 <!--Personal Info-->
-                <form action="feed.html">
+                <form id="new_user" action="/users" method="post">
                 <fieldset>
                     <legend>Fill in the form with your personal information and get ready to live new experiences!</legend>
                     <!--ROW1-->
@@ -12,7 +12,7 @@
                         <div class="col-md-4">
                         	<div>
                                 <label for="first_name">First Name:</label>
-                                <input type="text" id="fisrt_name" class="form-control" value="" placeholder="Enter Name"><br>
+                                <input type="text" id="first_name" class="form-control" value="" placeholder="Enter Name"><br>
                         	</div>
                         </div>
                         <div  class="col-md-4 col-md-offset-1">
@@ -33,29 +33,29 @@
                         <div  class="col-md-4 col-md-offset-1">
                             <label for="ConfirmInputPassword">Birthday:</label>
                         	<div class="form-group">
-  <div id="datetimepicker4" class="input-group">
-    <input data-format="dd/MM/yyyy" type="text" class="form-control" placeholder="Enter birthday"></input>
-    <span class="input-group-addon">
-        <span class="add-on">
-            <span class="glyphicon glyphicon-calendar"></span>
-        </span>
-    </span>
-  </div>
-</div>
+                                <div id="datetimepicker4" class="input-group">
+                                    <input data-format="dd/MM/yyyy" type="text" id="birthday" class="form-control" placeholder="Enter birthday"></input>
+                                    <span class="input-group-addon">
+                                        <span class="add-on">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                   </div>
                     <!--ROW3-->
                    <div class="row" style="margin-left:3%">
                         <div class="col-md-4">
                         	<div class="form-group">
                             	<label for="InputPassword">Password</label>
-                            	<input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                            	<input type="password" class="form-control" id="password" placeholder="Password">
                           	</div>
                         </div>
                         <div class="col-md-4 col-md-offset-1">
                         	<div class="form-group">
                             	<label for="ConfirmInputPassword">Confirm Password</label>
-                            	<input type="password" class="form-control" id="ConfirmInputPassword1" placeholder="Password">
+                            	<input type="password" class="form-control" id="confirm_password" placeholder="Password">
                           	</div>
                         </div>
                     </div>
@@ -69,19 +69,27 @@
                         </div>
                         <div class="col-md-4 col-md-offset-1">
                         	<div>
-                            	<label for="languages">Languages you speak:</label><br>
+                                <label for="city">City:</label><br>
+                                <input type="text" id="city" class="form-control" value="" placeholder="Enter the city you live in"><br/><br/>
+                            </div>
+                        </div>
+                   </div>
+                    <!--ROW5-->
+                    <div class="row" style="margin-left:3%">
+                        <div class="col-md-4">
+                                <label for="languages">Languages you speak:</label><br>
                                 <input type="checkbox" name="languages" value="English" /> English
                                 <input type="checkbox" name="languages" value="Spanish" /> Spanish
                                 <input type="checkbox" name="languages" value="Italian" /> Italian <br/>
                                 <input type="checkbox" name="languages" value="French" /> French
                                 <input type="checkbox" name="languages" value="German" /> German
                                 <input type="checkbox" name="languages" value="Chinese" /> Chinese
-                        	</div>
                         </div>
-                        <br />
-                        <br />
-                        <br />
                     </div>
+                        <br />
+                        <br />
+                        <br />
+
                 </fieldset>
 
                 <!--Interests-->
@@ -317,7 +325,7 @@
                     </div>
                 </fieldset>
                 <div align="center">
-                	<button type="submit" class="btn btn-submit btn-lg">Find Pals</button>
+                	<button id="register" type="submit" class="btn btn-submit btn-lg">Find Pals</button>
 				</div>
                 </form>
             </div>

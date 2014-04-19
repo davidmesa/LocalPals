@@ -4,7 +4,8 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     '': 'index'
 
   initialize: ->
-    @listenTo LocalPals.Vent, "register", @registration
+    @listenTo LocalPals.Vent, "registration", @registration
+    @listenTo LocalPals.Vent, "login", @login
 
   index: ->
     @headerView()
@@ -20,6 +21,14 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     $('#sidebar').html(sidebarView.render().el)
 
   registration: ->
-    Backbone.history.navigate("/register")
+    Backbone.history.navigate("/users/new")
     registrationView = new LocalPals.Views.Registration()
     $('#container').html(registrationView.render().el)
+
+  login: ->
+    Backbone.history.navigate("/feed")
+    @feed()
+
+  feed: ->
+    view = new LocalPals.Views.Feed()
+    $('#container').html(view.render().el)

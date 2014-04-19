@@ -3,12 +3,15 @@ class LocalPals.Views.HomeIndex extends Backbone.View
   template: JST['home/index']
 
   events:
-    "click #register": "register"
+    "click #registration": "registration"
+
+  initialize: ->
+
 
   render: ->
     $(@el).html(@template())
     @
 
-  register: (e) ->
+  registration: (e) ->
     e.preventDefault()
-    LocalPals.Vent.trigger('register')
+    LocalPals.Vent.trigger('registration')
