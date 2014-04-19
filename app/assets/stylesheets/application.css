@@ -53,7 +53,7 @@ body{
 }
 
 #add-city{
-    background-image:url(../img/addcity.jpg);
+    background-image:url(/addcity.jpg);
     background-repeat:no-repeat;
     background-position:center;
     background-attachment:fixed;
@@ -156,7 +156,7 @@ body{
 }
 
 .info-tag{
-    background-image: url(../img/fondo.png);
+    background-image: url(/fondo.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -169,7 +169,7 @@ body{
 #activity-content
 {
     margin-top: 50px;
-    background-image: url(../img/notebook.png);
+    background-image: url(/notebook.png);
     background-repeat: no-repeat;
     background-size:120% auto;
     font-family: 'Special Elite', cursive;
@@ -279,7 +279,7 @@ nombre, .nombre
 }
 
 .comment{
-    background-image: url(../img/txt-bubble.png);
+    background-image: url(/txt-bubble.png);
     background-size:100% 100%;
 }
 .comment > h3{
@@ -313,7 +313,7 @@ img.logo {
 
 #info {
     height: 350px;
-    background-image: url(../img/info.png);
+    background-image: url(/info.png);
     background-size: 100% 350px;
     background-repeat: no-repeat;
 }
@@ -334,7 +334,7 @@ img.logo {
 /* Sergio */
 #tag-pal
 {
-    background-image: url(../img/tag2.png);
+    background-image: url(/tag2.png);
     background-repeat: no-repeat;
     -webkit-transform: rotate(355deg);
     font-family: 'Special Elite', cursive;
@@ -346,7 +346,7 @@ img.logo {
 
 
 #titulo {
-    margin-top: 10%;
+    margin-top: 6%;
 }
 /* Sergio */
 

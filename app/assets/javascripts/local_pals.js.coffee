@@ -3,6 +3,7 @@ window.LocalPals =
   Collections: {}
   Views: {}
   Routers: {}
+  Vent: _.clone(Backbone.Events)
   initialize: ->
     new LocalPals.Routers.MainRouter()
     Backbone.history.start()

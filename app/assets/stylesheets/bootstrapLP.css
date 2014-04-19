@@ -278,7 +278,6 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;
 }
 input,
 button,
@@ -3461,11 +3460,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     position: relative;
     display: block;
     padding: 10px 15px;
+    color:#000;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
     text-decoration: none;
-    background-color: #eee;
+    background:#D9AF5F;
 }
 .nav > li.disabled > a {
     color: #999;

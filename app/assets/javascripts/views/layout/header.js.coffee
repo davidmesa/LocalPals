@@ -1,8 +1,7 @@
 class LocalPals.Views.Header extends Backbone.View
 
-  template: JST['header/index']
+  template: JST['layout/header']
 
   render: ->
     $(@el).html(@template())
     @
-
