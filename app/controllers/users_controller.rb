@@ -3,32 +3,39 @@ class UsersController < ApplicationController
 
   def create
 
-    city_name = params[:city]
-    city = City.new
-    city.name = city_name
-    city.save()
+    password = params[:password]
+    confirm_password = params[:confirm_password]
+    if (confirm_password!=password)
+      render json: {errors: 'Password confirmation must be the same as password'}, :status => 422
+    else
 
-    user = User.new(user_params)
-    user.city = city
-    user.save()
+      city_name = params[:city]
+      city = City.new
+      city.name = city_name
+      city.save()
 
-    cookies.signed[:user_id] = user.id
+      user = User.new(user_params)
+      user.city = city
+      user.save()
 
-    university = params[:university]
-    about_me = params[:about_me]
-    hobbies = params[:hobbies]
-    local = Local.new
-    local.user = user
-    local.university = university
-    local.about_me = about_me
-    local.hobbies = hobbies
-    local.save()
+      cookies.signed[:user_id] = user.id
 
-    traveler = Traveler.new
-    traveler.user = user
-    traveler.save()
+      university = params[:university]
+      about_me = params[:about_me]
+      hobbies = params[:hobbies]
+      local = Local.new
+      local.user = user
+      local.university = university
+      local.about_me = about_me
+      local.hobbies = hobbies
+      local.save()
 
-    respond_with(user)
+      traveler = Traveler.new
+      traveler.user = user
+      traveler.save()
+
+      respond_with(user)
+    end
   end
 
   private

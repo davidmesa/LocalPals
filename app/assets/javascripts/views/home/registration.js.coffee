@@ -14,6 +14,7 @@ class LocalPals.Views.Registration extends Backbone.View
     @model = new LocalPals.Models.UserRegistration()
     @model.set login: @$('#email').val()
     @model.set password: @$('#password').val()
+    @model.set confirm_password: @$('#confirm_password').val()
     @model.set name: @$('#first_name').val() + " " + @$('#last_name').val()
     @model.set university: @$('#university').val()
     @model.set birthday: @$('#birthday').val()
