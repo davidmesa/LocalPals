@@ -1,0 +1,7 @@
+<div id="content" class="content">
+  <div id="add-city" class="row">
+    <a href="agregarciudad.html"><button type="button" class="btn btn-add-city">Add City</button></a>
+  </div>
+  <div id="cities"></div>
+</div>
+

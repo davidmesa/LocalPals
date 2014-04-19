@@ -5,7 +5,6 @@ class CreateCities < ActiveRecord::Migration
       t.string :latitude
       t.string :longitude
       t.string :name
-
       t.timestamps
     end
   end

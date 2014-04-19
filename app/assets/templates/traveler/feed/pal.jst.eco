@@ -1,0 +1,4 @@
+<div id="imagen" class="col-md-4">
+  <a href="activity.html"><img src="" alt="Responsive image" class="img-activity"></a>
+  <img src="" alt="Responsive image" class="img-pal">
+</div>

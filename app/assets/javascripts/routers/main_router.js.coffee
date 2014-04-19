@@ -19,8 +19,6 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     sidebarView = new LocalPals.Views.Sidebar()
     $('#sidebar').html(sidebarView.render().el)
 
-
-
   registration: ->
     Backbone.history.navigate("/register")
     registrationView = new LocalPals.Views.Registration()

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418195329) do
+ActiveRecord::Schema.define(version: 20140419042427) do
 
   create_table "activities", force: true do |t|
     t.string   "address"
@@ -61,15 +61,15 @@ ActiveRecord::Schema.define(version: 20140418195329) do
     t.integer "user_id"
   end
 
-  create_table "language_users", id: false, force: true do |t|
-    t.integer "language_id"
-    t.integer "user_id"
-  end
-
   create_table "languages", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "languages_users", id: false, force: true do |t|
+    t.integer "language_id"
+    t.integer "user_id"
   end
 
   create_table "locals", force: true do |t|
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140418195329) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "university"
   end
 
   create_table "reviews", force: true do |t|
@@ -103,6 +104,7 @@ ActiveRecord::Schema.define(version: 20140418195329) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "city_id"
+    t.string   "name"
   end
 
   add_index "users", ["city_id"], name: "index_users_on_city_id"
