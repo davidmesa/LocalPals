@@ -2,6 +2,7 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
 
   routes:
     '': 'index'
+    'feed' : 'feed'
 
   initialize: ->
     @listenTo LocalPals.Vent, "registration", @registration
@@ -30,5 +31,7 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @feed()
 
   feed: ->
+    @sidebarView()
+    @headerView()
     view = new LocalPals.Views.Feed()
     $('#container').html(view.render().el)

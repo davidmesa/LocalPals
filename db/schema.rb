@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419042427) do
+ActiveRecord::Schema.define(version: 20140419205344) do
 
   create_table "activities", force: true do |t|
     t.string   "address"
@@ -47,7 +47,10 @@ ActiveRecord::Schema.define(version: 20140419042427) do
     t.integer  "traveler_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
   end
+
+  add_index "city_trips", ["city_id"], name: "index_city_trips_on_city_id"
 
   create_table "interests", force: true do |t|
     t.string   "category"
@@ -61,15 +64,15 @@ ActiveRecord::Schema.define(version: 20140419042427) do
     t.integer "user_id"
   end
 
-  create_table "language_users", id: false, force: true do |t|
-    t.integer "language_id"
-    t.integer "user_id"
-  end
-
   create_table "languages", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "languages_users", id: false, force: true do |t|
+    t.integer "language_id"
+    t.integer "user_id"
   end
 
   create_table "locals", force: true do |t|

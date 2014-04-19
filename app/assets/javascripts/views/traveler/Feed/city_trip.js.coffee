@@ -1,11 +1,12 @@
-class LocalPals.Views.CityTrips extends Backbone.View
+class LocalPals.Views.CityTrip extends Backbone.View
   className: "city-info row"
 
   template: JST['traveler/feed/city_trip']
 
   initialize: ->
     @childViews = []
-    @city_pals = @model.pals
+    @city_pals = @model.attributes[1]
+    console.log(@city_pals)
     @city_pals.forEach(@renderCityPals, @)
 
   render: ->

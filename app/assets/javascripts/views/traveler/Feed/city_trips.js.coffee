@@ -1,5 +1,9 @@
 class LocalPals.Views.CityTrips extends Backbone.View
 
+  initialize: ->
+    @listenTo @collection, "reset", @renderLlegada
+    @collection.fetch({reset: true})
+
   render: ->
     $(@el).html('<h1>Loading</h1>')
     @
@@ -8,10 +12,11 @@ class LocalPals.Views.CityTrips extends Backbone.View
     $(@el).html('')
     @childViews = []
     @collection.forEach(@renderPost, @)
-    @manejarTamanoFeed()
     @
 
   renderPost: (model) ->
+    console.log("Entra a renderizar post")
     v = new LocalPals.Views.CityTrip({ model: model })
     @childViews.push(v)
     @$el.append(v.render().el)
+    console.log(@$el)
