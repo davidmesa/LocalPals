@@ -17,6 +17,10 @@ class LocalPals.Views.Registration extends Backbone.View
     @model.set name: @$('#first_name').val() + " " + @$('#last_name').val()
     @model.set university: @$('#university').val()
     @model.set birthday: @$('#birthday').val()
+    @model.set city: @$('#city').val()
+    @model.set about_me: @$('#about_me').val()
+    @model.set hobbies: @$('#hobbies').val()
     console.log @model.toJSON()
     @model.save {},
       success: (model) -> LocalPals.Vent.trigger "login", model
+

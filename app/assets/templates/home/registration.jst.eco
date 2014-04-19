@@ -319,7 +319,17 @@
                     <div class="row" style="margin-left:3%">
                         <div  class="col-md-8 col-md-offset-1">
                         	<div>
-                                <textarea class="form-control" rows="7"></textarea><br>
+                        	    <label>About me:</label>
+                                <textarea id="about_me" class="form-control" rows="7"></textarea><br>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ROW2-->
+                    <div class="row" style="margin-left:3%">
+                        <div  class="col-md-8 col-md-offset-1">
+                            <div>
+                                <label>Hobbies:</label>
+                                <textarea id="hobbies" class="form-control" rows="7"></textarea><br>
                             </div>
                         </div>
                     </div>
