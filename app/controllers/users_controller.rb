@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     user.city = city
     user.save()
 
+    cookies.signed[:user_id] = user.id
+
     university = params[:university]
     about_me = params[:about_me]
     hobbies = params[:hobbies]

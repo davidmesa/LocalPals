@@ -302,7 +302,7 @@
                                     	<span class="input-group-addon">
                                         	<input type="checkbox">
                                       	</span>
-                                      	<input type="text" class="form-control" value="BiciTours" readonly="readonly">
+                                      	<input type="text" class="form-control" value="BikeTours" readonly="readonly">
                                     </div>
                               	</div>
                             </div>
