@@ -16,6 +16,9 @@ class UsersController < ApplicationController
 
       user = User.new(user_params)
       user.city = city
+      getInterests(params[:interests]).each do |interest|
+        user.interests << interest
+      end
       user.save()
 
       cookies.signed[:user_id] = user.id
@@ -38,10 +41,52 @@ class UsersController < ApplicationController
     end
   end
 
+  def get_user
+    user_id = cookies.signed[:user_id]
+    user_id = 22 unless user_id
+    user = User.find user_id
+    respond_with(user)
+  end
+
+  def login
+    printf("entra a login en controller")
+    login = params[:login]
+    password = params[:password]
+
+    user = User.find_by login: login
+    if user
+      if (user.password==password)
+        cookies.signed[:user_id] = user.id
+        respond_with(user)
+      else
+        render json: {errors: 'Wrong password'}, :status => 422
+      end
+    else
+      render json: {errors: 'User does not exist'}, :status => 422
+    end
+
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:login, :password, :name, :university, :birthday)
+    params.require(:user).permit(:login, :password, :name, :university, :birthday, :interests)
+  end
+
+  def getInterests(interests)
+    response = []
+    interests.each do |interest|
+      rinterest = Interest.where(:name => interest)
+      if rinterest.empty?
+        rinterest = Interest.new
+        rinterest.name = interest
+        rinterest.save
+      else
+        rinterest = rinterest.first
+      end
+      response << rinterest
+    end
+    response
   end
 
 end

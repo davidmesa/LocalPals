@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419233650) do
+ActiveRecord::Schema.define(version: 20140420170902) do
 
   create_table "activities", force: true do |t|
     t.string   "address"
-    t.date     "date"
     t.text     "description"
     t.integer  "local_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "img"
     t.string   "name"
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   create_table "activities_city_trips", force: true do |t|

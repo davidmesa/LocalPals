@@ -3,15 +3,19 @@ class LocalPals.Views.LocalIndex extends Backbone.View
   template: JST['local/index']
 
   events:
-    "click #new_activity": "new_activity"
+    "click #new_activity": "newActivity"
 
   initialize: ->
     @listenTo @collection, "reset", @render
+    @listenTo LocalPals.Vent, "project:create", @addToCollection
+    @listenTo @collection,"add", @renderActivity
     @collection.fetch({reset: true})
+    @model.fetch()
 
   render: ->
-    $(@el).html(@template())
+    $(@el).html(@template({model: @model.attributes}))
     console.log(@collection.size())
+    console.log(@model.toJSON())
     @collection.forEach(@renderActivity, @)
     @
 
@@ -21,6 +25,7 @@ class LocalPals.Views.LocalIndex extends Backbone.View
     @$('#local-activities').append(v.render().el)
     console.log("render activity")
 
-  new_activity: (e) ->
-    e.preventDefault()
-    LocalPals.Vent.trigger('new_activity')
+  newActivity: ->
+
+  addToCollection: (model) ->
+    @collection.add model
