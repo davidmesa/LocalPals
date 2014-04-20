@@ -17,5 +17,13 @@ class LocalPals.Views.NewActivity extends Backbone.View
     @model.set img: @$('#img-url').val()
     @model.set start_date: @$('#starts').val()
     @model.set end_date: @$('#ends').val()
+    @model.set interests: @convertObject()
     @model.save {},
       success: (model) -> LocalPals.Vent.trigger "activity:create", model
+
+  convertObject: ->
+    paramObj = []
+    $.each $("form").serializeArray(), (_, kv) ->
+      if kv.name != 'languages'
+        paramObj.push(kv.name)
+    return paramObj

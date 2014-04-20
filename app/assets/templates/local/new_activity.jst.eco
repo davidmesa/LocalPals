@@ -70,6 +70,225 @@
                     <label>Image</label>
                     <input id="img-url" type="text" class="form-control" placeholder="">
                 </div>
+                <!--Interests-->
+                                <fieldset id="Interests">
+                                    <label>What is this activity about?</label>
+                                    <!--Row 1 -->
+                                    <div class="row" style="margin-left:3%">
+                                    	<div class="col-md-4">
+                                        	<div class="panel panel-default">
+                                            	<div class="panel-heading" style="background-color:#F4C56B">
+                                                	<h3 class="panel-title">Sports</h3>
+                                              	</div>
+                                              	<div class="panel-body">
+                                                	<div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Football">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Football" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Baseball">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Baseball" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Basketball">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Basketball" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Volleyball">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Volleyball" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Skydiving">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Skydiving" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Diving">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Diving" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Bungee">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Bungee Jumping" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="PaintBall">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Paint Ball" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Motocross">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Motocross" readonly="readonly">
+                                                    </div>
+                                              	</div>
+                                            </div>
+                                        </div>
+                                    	<div class="col-md-4 col-md-offset-1">
+                                        	<div class="panel panel-default">
+                                            	<div class="panel-heading" style="background-color:#F4C56B">
+                                                	<h3 class="panel-title">Arts</h3>
+                                              	</div>
+                                              	<div class="panel-body">
+                                                	<div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Photography">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Photography" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Museums">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Museums" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Graffiti">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Street Art - Graffiti" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Graffiti">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Painting" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Literature">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Literature" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Music">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Music" readonly="readonly">
+                                                    </div>
+                                              	</div>
+                                            </div>
+                                        </div>
+                                        <br/><br/><br/>
+                                    </div>
+
+
+                                    <!--Row 2 -->
+                                    <div class="row" style="margin-left:3%">
+                                    	<div class="col-md-4">
+                                        	<div class="panel panel-default">
+                                            	<div class="panel-heading" style="background-color:#F4C56B">
+                                                	<h3 class="panel-title">Nightlife & Entertainment</h3>
+                                              	</div>
+                                              	<div class="panel-body">
+                                                	<div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Clubs">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Night Clubs" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Pubs">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Pubs" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Restaurants">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Restaurants" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Caffe">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Caffe" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Theater">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Theater" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Cinema">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Cinema" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Bowling">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Bowling" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Concerts">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Concerts" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Shopping">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Shopping Malls" readonly="readonly">
+                                                    </div>
+                                              	</div>
+                                            </div>
+                                        </div>
+                                    	<div class="col-md-4 col-md-offset-1">
+                                        	<div class="panel panel-default">
+                                            	<div class="panel-heading" style="background-color:#F4C56B">
+                                                	<h3 class="panel-title">Nature & Adventure</h3>
+                                              	</div>
+                                              	<div class="panel-body">
+                                                	<div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="NaturalParks">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Natural Parks" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Eco-Trips">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Eco-Trips" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="Horseback">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="Horseback Riding" readonly="readonly">
+                                                    </div>
+                                                    <div class="input-group">
+                                                    	<span class="input-group-addon">
+                                                        	<input type="checkbox" name="BikeTours">
+                                                      	</span>
+                                                      	<input type="text" class="form-control" value="BikeTours" readonly="readonly">
+                                                    </div>
+                                              	</div>
+                                            </div>
+                                        </div>
+                                        <br/><br/><br/>
+                                    </div>
+
+                                </fieldset>
                 <button type="submit" id="submit" class="btn btn-default">Submit</button>
                 <br><br>
             </form>

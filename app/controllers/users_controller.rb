@@ -21,8 +21,6 @@ class UsersController < ApplicationController
       end
       user.save()
 
-
-
       cookies.signed[:user_id] = user.id
 
       university = params[:university]
