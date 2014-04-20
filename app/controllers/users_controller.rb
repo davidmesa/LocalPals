@@ -16,7 +16,12 @@ class UsersController < ApplicationController
 
       user = User.new(user_params)
       user.city = city
+      getInterests(params[:interests]).each do |interest|
+        user.interests << interest
+      end
       user.save()
+
+
 
       cookies.signed[:user_id] = user.id
 
@@ -41,7 +46,24 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:login, :password, :name, :university, :birthday)
+    params.require(:user).permit(:login, :password, :name, :university, :birthday, :interests)
+  end
+
+  def getInterests(interest)
+    response = []
+    interest.each do |interest|
+      rinterest = Interest.where(:name => interest)
+      if rinterest.empty?
+        puts 'entra'
+        rinterest = Interest.new
+        rinterest.name = interest
+        rinterest.save
+      else
+        rinterest = rinterest.first
+      end
+      response << rinterest
+    end
+    response
   end
 
 end

@@ -21,7 +21,15 @@ class LocalPals.Views.Registration extends Backbone.View
     @model.set city: @$('#city').val()
     @model.set about_me: @$('#about_me').val()
     @model.set hobbies: @$('#hobbies').val()
+    @model.set interests: @convertObject()
     console.log @model.toJSON()
     @model.save {},
       success: (model) -> LocalPals.Vent.trigger "login", model
+
+  convertObject: ->
+    paramObj = []
+    $.each $("form").serializeArray(), (_, kv) ->
+      if kv.name != 'languages'
+        paramObj.push(kv.name)
+    return paramObj
 
