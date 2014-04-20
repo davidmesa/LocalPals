@@ -49,9 +49,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:login, :password, :name, :university, :birthday, :interests)
   end
 
-  def getInterests(interest)
+  def getInterests(interests)
     response = []
-    interest.each do |interest|
+    interests.each do |interest|
       rinterest = Interest.where(:name => interest)
       if rinterest.empty?
         puts 'entra'
