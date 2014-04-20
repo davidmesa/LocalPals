@@ -1,0 +1,28 @@
+<div id="content" class="content-activity">
+    <div class="col-md-offset-1">
+        <div id="activity-header" class="row">
+            <div id="imagen-profile" class="col-md-3">
+                <img src="/pal1.jpg" alt="Responsive image" class="img-local-profile"></img>
+            </div>
+            <div id="info-pal" class="col-md-8">
+            	<div class="col-md-8 info-tag">
+                    <br>
+                    <nombre> Ma. Camila Ángel </nombre>
+                    <h3> Age: 21</h3>
+                    <h3> Languages: spanish, english </h3>
+                    <h3> Interests: photography, arts, party </h3>
+                </div>
+                <div class="tag-tail col-md-4">
+                	<img src="/tagFinal.png" style="height:inherit" />
+                </div>
+            </div>
+        </div>
+
+        <div class="local-activities row">
+            <div id="local-activities"></div>
+            <div id="imagen" class="col-md-4">
+                <a href="/#activities/new" id="new_activity"><img src="/plus.png" alt="Responsive image"></a>
+            </div>
+        </div>
+    </div>
+</div>

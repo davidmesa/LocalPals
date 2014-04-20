@@ -3,6 +3,9 @@ LocalPals::Application.routes.draw do
   root 'application#index'
 
   resources :users
+  resources :activities
+
+  get 'local/activities' => 'activities#show'
 
   get 'traveler/feed' => 'feed_traveler#show'
 

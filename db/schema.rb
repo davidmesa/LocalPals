@@ -66,15 +66,15 @@ ActiveRecord::Schema.define(version: 20140419233650) do
     t.integer "user_id"
   end
 
+  create_table "language_users", id: false, force: true do |t|
+    t.integer "language_id"
+    t.integer "user_id"
+  end
+
   create_table "languages", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "languages_users", id: false, force: true do |t|
-    t.integer "language_id"
-    t.integer "user_id"
   end
 
   create_table "locals", force: true do |t|
