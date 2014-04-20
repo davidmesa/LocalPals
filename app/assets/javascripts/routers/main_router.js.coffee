@@ -3,11 +3,13 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
   routes:
     '': 'index'
     'activities': 'activities'
+    'activities/new': 'newActivity'
     'feed' : 'feed'
 
   initialize: ->
     @listenTo LocalPals.Vent, "registration", @registration
     @listenTo LocalPals.Vent, "login", @login
+    @listenTo LocalPals.Vent, "activity:create", @activities
 
   index: ->
     @headerView()
@@ -17,6 +19,10 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
   headerView: ->
     headerView = new LocalPals.Views.Header()
     $('#header').html(headerView.render().el)
+
+  headerSessionView: ->
+    headerSessionView = new LocalPals.Views.HeaderSession()
+    $('#header').html(headerSessionView.render().el)
 
   sidebarView: ->
     sidebarView = new LocalPals.Views.Sidebar()
@@ -33,13 +39,23 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
 
   feed: ->
     @sidebarView()
-    @headerView()
+    @headerSessionView()
     view = new LocalPals.Views.Feed()
     $('#container').html(view.render().el)
 
   activities: ->
-    @headerView()
+    @headerSessionView()
     @sidebarView()
-    view = new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()})
-    $('#container').html(view.render().el)
+    @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities(), model: new LocalPals.Models.User()}))
 
+  newActivity: ->
+    @swapContainer(new LocalPals.Views.NewActivity({model: new LocalPals.Models.Activity()}))
+
+  swapContainerToActivity: ->
+    @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities(), model: new LocalPals.Models.User()}))
+    Backbone.history.navigate("/activities")
+
+  swapContainer: (view) ->
+    @currentContainerView.remove() if @currentContainerView
+    @currentContainerView = view
+    $('#container').html(@currentContainerView.render().el)

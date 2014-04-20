@@ -38,6 +38,32 @@ class UsersController < ApplicationController
     end
   end
 
+  def get_user
+    user_id = cookies.signed[:user_id]
+    user_id = 22 unless user_id
+    user = User.find user_id
+    respond_with(user)
+  end
+
+  def login
+    printf("entra a login en controller")
+    login = params[:login]
+    password = params[:password]
+
+    user = User.find_by login: login
+    if user
+      if (user.password==password)
+        cookies.signed[:user_id] = user.id
+        respond_with(user)
+      else
+        render json: {errors: 'Wrong password'}, :status => 422
+      end
+    else
+      render json: {errors: 'User does not exist'}, :status => 422
+    end
+
+  end
+
   private
 
   def user_params

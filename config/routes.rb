@@ -5,7 +5,10 @@ LocalPals::Application.routes.draw do
   resources :users
   resources :activities
 
-  get 'local/activities' => 'activities#show'
+  get '/user/get_user' => 'users#get_user'
+  put '/user/get_user' => 'users#get_user'
+
+  post '/user/login' => 'users#login'
 
   get 'traveler/feed' => 'feed_traveler#show'
 

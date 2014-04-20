@@ -3,10 +3,27 @@ class ActivitiesController < ApplicationController
 
   def index
     printf('entra a index')
-    @activities = Activity.all
+    user_id = cookies.signed[:user_id]
+    user_id = 22 unless user_id
+    @activities = Activity.where local_id: user_id
     respond_with @activities do |format|
       format.json { render json: @activities.to_json }
     end
+  end
+
+  def create
+    activity = Activity.new(activity_params)
+    user_id = cookies.signed[:user_id]
+    user_id = 22 unless user_id
+    activity.local_id = user_id
+    activity.save()
+    respond_with(activity)
+  end
+
+  private
+
+  def activity_params
+    params.require(:activity).permit(:name, :description, :address, :img, :start_date, :end_date)
   end
 
 end
