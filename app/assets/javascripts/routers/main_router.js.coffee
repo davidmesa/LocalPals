@@ -57,9 +57,15 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     Backbone.history.navigate("/activities")
 
 
-  
+
   swapContainer: (view) ->
     @currentContainerView.remove() if @currentContainerView
     @currentContainerView = view
     $('#container').html(@currentContainerView.render().el)
 
+
+  addcity: ->
+    @headerView()
+    @sidebarView()
+    view = new LocalPals.Views.TravelerCity({collection: new LocalPals.Collections.Cities})
+    $('#container').html(view.render().el)
