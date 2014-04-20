@@ -1,0 +1,177 @@
+     <div style="margin-top:50px;">
+            <div class="row" align="center">
+
+                <div class="agregar-ciudad-mapa col-md-offset-2 col-md-8">
+                    <h1 id="titulo">Select your city of destiny: </h1>
+                    <!-- Contenido MAPAS, label que contiene la ciudad elegida, en caso de no funcionar. El titulo podría tener la información necesaria
+                    haciendo previamente, un split por : para tomar solo la segunda parte del texto  -->
+                    <label id="lblciudad"> </label>
+                    <div class="img">
+                        <div id="map-canvas"></div>
+                    </div>
+                </div>
+                <hr />
+
+
+                <div class="fecha col-md-offset-2 col-md-8">
+                    <h1>Select your dates of stay:</h1>
+                    <form action="feed.html">
+                        <div class="col-md-6">
+                            <h4>Start</h4>
+                            <div class="form-group">
+                                <div id="datetimepicker4" class="input-group">
+                                       <input data-format="dd/MM/yyyy" type="text" class="form-control" placeholder=""></input>
+                                       <span class="input-group-addon">
+                                           <span class="add-on">
+                                              <span class="glyphicon glyphicon-calendar"></span>
+                                           </span>
+                                       </span>
+                                 </div>
+                             </div>
+                         </div>
+
+                        <div class="col-md-6">
+                            <h4>End</h4>
+                            <div class="form-group">
+      <div id="datetimepicker5" class="input-group">
+        <input data-format="dd/MM/yyyy" type="text" class="form-control" placeholder=""></input>
+        <span class="input-group-addon">
+            <span class="add-on">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </span>
+      </div>
+    </div>
+                         </div>
+
+                         <div class="col-md-offset-11">
+                               <button type="submit" class="btn btn-default" style="margin-top:20px; margin-bottom:20px;">Submit</button>
+                         </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+
+  <!-- Seccion de script para los calendarios, antes del mapa -->
+
+<script type="text/javascript"
+                     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+                    </script>
+                    <script type="text/javascript"
+                     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+                    </script>
+                    <script type="text/javascript"
+                     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+                    </script>
+                    <script type="text/javascript"
+                     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+                    </script>
+
+        <script type="text/javascript">
+
+          $(function() {
+            $('#datetimepicker4').datetimepicker({
+              pickTime: false
+            });
+          });
+                $(function() {
+            $('#datetimepicker5').datetimepicker({
+              pickTime: false
+            });
+          });
+        </script>
+
+        <!-- Seccion del Mapa Contenido -->
+
+         <style type="text/css">
+          #map-canvas {
+            width: 900px;
+            height: 400px;
+          }
+
+        </style>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
+
+
+        <script>
+    var geocoder;
+    var map;
+    var marker;
+    function initialize() {
+    marker=null;
+      geocoder = new google.maps.Geocoder();
+      var latlng = new google.maps.LatLng(4.60971, -74.08175);
+      var mapOptions = {
+        zoom: 5,
+        center: latlng,
+        backgroundColor:"#FFF6EB",
+        disableDoubleClickZoom:true,
+        maxZoom:7,
+        minZoom:4,
+         styles: [	{featureType:'water',elementType:'geometry',stylers:[{"visibility":"on"},{"color":"#FFF6EB"}]},
+                    {featureType:'landscape',elementType:'geometry.fill',stylers:[{color:'#abce83'}]},
+                    {featureType:'poi',elementType:'geometry.fill',stylers:[{color:'#769E72'}]},
+                    {featureType:'poi',elementType:'labels',stylers:[{"visibility":"off"}]},
+                    {featureType:'poi.park',elementType:'geometry',stylers:[{visibility:'simplified'},{color:'#8dab68'}	]},
+                    {featureType:'road',elementType:'geometry.fill',stylers:[{visibility:'simplified'}]},
+                    {featureType:'road',elementType:'labels.text.fill',stylers:[{color:'#5B5B3F'}]},
+                    {featureType:'road',elementType:'labels.text.stroke',stylers:[{color:'#ABCE83'}]},
+                    {featureType:'road',elementType:'labels.icon',stylers:[{visibility:'off'}]},
+                    {featureType:'road.local',elementType:'geometry',stylers:[{color:'#A4C67D'},]},
+                    {featureType:'road.arterial',elementType:'geometry',stylers:[{color:'#9BBF72'}]},
+                    {featureType:'road.highway',elementType:'geometry',stylers:[{color:'#EBF4A4'}]},
+                    {featureType:'transit',stylers:[{visibility:'off'}]},
+                    {featureType:'administrative',elementType:'geometry.stroke',stylers:[{visibility:'on'},{color:'#87ae79'}]},
+                    {featureType:'administrative',elementType:'geometry.fill',stylers:[{color:'#7f2200'},{visibility:'off'}	]},
+                    {featureType:'administrative',elementType:'labels.text.stroke',stylers:[{color:'#ffffff'},{visibility:'on'},{weight:4.1}]},
+                    {featureType:'administrative',elementType:'labels.text.fill',stylers:[{color:'#495421'},]},
+                    {featureType:'administrative.neighborhood',elementType:'labels',stylers:[{visibility:'off'}]}]
+                   ,
+         disableDefaultUI: true
+         };
+      map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+     google.maps.event.addListener(map, 'click',ubicacion)
+    }
+
+
+    <!--Responde al click sobre el mapa y refresca la interfaz, poniendo en valor de la ciudad selccionada en un ->
+
+    function ubicacion(e)
+    {
+      geocoder.geocode({'latLng': e.latLng}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK)
+        {
+
+        document.getElementById('lblciudad').value=results[1].formatted_address;
+        document.getElementById('titulo').innerHTML='You has selected: '+ results[1].formatted_address;
+
+        if(marker==null)
+        {
+           marker = new google.maps.Marker({
+           position: e.latLng,
+           animation: google.maps.Animation.DROP,
+           flat:true,
+           map: map
+           });
+        }
+        else
+        {marker.setAnimation(google.maps.Animation.DROP);
+        marker.setPosition(e.latLng);}
+
+        }
+        else {   document.getElementById('titulo').innerHTML='Sorry, you have to select a city within our boundaries ';  }
+      });
+    }
+
+
+
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
+
+

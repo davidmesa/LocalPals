@@ -3,6 +3,7 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
   routes:
     '': 'index'
     'activities': 'activities'
+    'addcity':'addcity'
     'feed' : 'feed'
 
   initialize: ->
@@ -43,3 +44,10 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     view = new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()})
     $('#container').html(view.render().el)
 
+
+
+  addcity: ->
+    @headerView()
+    @sidebarView()
+    view = new LocalPals.Views.TravelerCity({collection: new LocalPals.Collections.Cities})
+    $('#container').html(view.render().el)
