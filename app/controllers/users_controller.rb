@@ -80,7 +80,6 @@ class UsersController < ApplicationController
     interests.each do |interest|
       rinterest = Interest.where(:name => interest)
       if rinterest.empty?
-        puts 'entra'
         rinterest = Interest.new
         rinterest.name = interest
         rinterest.save
