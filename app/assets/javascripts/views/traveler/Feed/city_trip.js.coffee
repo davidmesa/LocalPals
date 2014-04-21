@@ -9,6 +9,12 @@ class LocalPals.Views.CityTrip extends Backbone.View
     console.log(@city_pals)
     @city_pals.forEach(@renderCityPals, @)
 
+  removeFeed: ->
+    @remove()
+    @unbind()
+    _.each @childViews, (childView) ->
+      childView.removeFeed()  if childView.removeFeed
+
   render: ->
     @$el.html(@template({model: @model.attributes}))
     @

@@ -4,6 +4,12 @@ class LocalPals.Views.CityTrips extends Backbone.View
     @listenTo @collection, "reset", @renderLlegada
     @collection.fetch({reset: true})
 
+  removeFeed: ->
+    _.each @childViews, (childView) ->
+      childView.removeFeed()  if childView.removeFeed
+    @remove()
+    @unbind()
+
   render: ->
     $(@el).html('<h1>Loading</h1>')
     @

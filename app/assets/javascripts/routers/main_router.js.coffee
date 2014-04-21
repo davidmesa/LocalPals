@@ -2,55 +2,59 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
 
   routes:
     '': 'index'
+    'users/new': 'registration'
     'activities': 'activities'
-    'addcity':'addcity'
+    'addcity':'agregarciudad'
     'activities/new': 'newActivity'
     'feed' : 'feed'
     'activities/:id': 'showActivity'
 
   initialize: ->
     @listenTo LocalPals.Vent, "registration", @registration
-    @listenTo LocalPals.Vent, "agregarciudad", @agregarciudad
-    @listenTo LocalPals.Vent, "login", @login
+    @listenTo LocalPals.Vent, "addCity", @agregarciudad
+    @listenTo LocalPals.Vent, "login", @feed
     @listenTo LocalPals.Vent, "activity:create", @activities
     @listenTo LocalPals.Vent, "activity:show", @activityShow
 
   index: ->
-    @headerView()
+    LocalPals.Vent.trigger("GoHome")
+    @headerView() unless @basicHeader
     view = new LocalPals.Views.HomeIndex()
     $('#container').html(view.render().el)
 
-  headerView: ->
-    headerView = new LocalPals.Views.Header()
-    $('#header').html(headerView.render().el)
-
-  headerSessionView: ->
-    headerSessionView = new LocalPals.Views.HeaderSession()
-    $('#header').html(headerSessionView.render().el)
-
-  sidebarView: ->
-    sidebarView = new LocalPals.Views.Sidebar()
-    $('#sidebar').html(sidebarView.render().el)
-
   registration: ->
     Backbone.history.navigate("/users/new")
+    @headerView() unless @basicHeader
     registrationView = new LocalPals.Views.Registration()
     $('#container').html(registrationView.render().el)
 
-  agregarciudad: ->
-    registrationView = new LocalPals.Views.HomeIndex()
-    $('#container').html(registrationView.render().el)
-
-
-  login: ->
-    Backbone.history.navigate("/feed")
-    @feed()
-
   feed: ->
-    @sidebarView()
+    LocalPals.Vent.trigger("RemoveHome")
+    Backbone.history.navigate("/feed")
     @headerSessionView()
+    @sidebarView()
     view = new LocalPals.Views.Feed()
     $('#container').html(view.render().el)
+
+  headerView: ->
+    @basicHeader = new LocalPals.Views.Header()
+    $('#header').html(@basicHeader.render().el)
+
+  headerSessionView: ->
+    sessionHeader = new LocalPals.Views.HeaderSession()
+    $('#header').html(sessionHeader.render().el)
+
+  sidebarView: ->
+    sidebar = new LocalPals.Views.Sidebar()
+    $('#sidebar').html(sidebar.render().el)
+
+  agregarciudad: ->
+    Backbone.history.navigate("/addcity")
+    cityview = new LocalPals.Views.TravelerCity()
+    $('#container').html(cityview.render().el)
+
+  loginLP: ->
+    @feed()
 
   activities: ->
     @headerSessionView()
@@ -68,12 +72,6 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @currentContainerView.remove() if @currentContainerView
     @currentContainerView = view
     $('#container').html(@currentContainerView.render().el)
-
-  addcity: ->
-    @headerView()
-    @sidebarView()
-    view = new LocalPals.Views.TravelerCity({collection: new LocalPals.Collections.Cities})
-    $('#container').html(view.render().el)
 
   activityShow: (model) ->
     @swapContainer(new LocalPals.Views.ActivityDetails({ model: model }))

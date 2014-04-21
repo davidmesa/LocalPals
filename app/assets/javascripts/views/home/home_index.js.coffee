@@ -6,6 +6,13 @@ class LocalPals.Views.HomeIndex extends Backbone.View
     "click #registration": "registration"
 
   initialize: ->
+    @listenTo LocalPals.Vent, "registration", @leaveIndex
+    @listenTo LocalPals.Vent, "RemoveHome", @leaveIndex
+
+  leaveIndex: ->
+    console.log("Remueve Home")
+    @remove
+    @off
 
 
   render: ->

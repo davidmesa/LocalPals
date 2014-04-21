@@ -5,6 +5,13 @@ class LocalPals.Views.Header extends Backbone.View
   events:
     "click #login": "login"
 
+  initialize: ->
+    @listenTo LocalPals.Vent, "RemoveHome", @leaveHeader
+
+  leaveHeader: ->
+    @remove
+    @off
+
   render: ->
     $(@el).html(@template())
     @

@@ -5,6 +5,13 @@ class LocalPals.Views.Registration extends Backbone.View
   events:
     "click #register": "register"
 
+  initialize: ->
+    @listenTo LocalPals.Vent, "RemoveHome", @leaveRegistration
+
+  leaveRegistration: ->
+    @remove
+    @off
+
   render: ->
     $(@el).html(@template())
     @

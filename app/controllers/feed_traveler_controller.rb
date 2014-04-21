@@ -29,4 +29,25 @@ class FeedTravelerController < ApplicationController
 
   end
 
+  def addCity
+    start_date = params[:start_date]
+    end_date = params[:end_date]
+    city = 'Bogota'
+    cityOb= City.where(name: city).first
+    unless cityOb
+      cityOb = City.new
+      cityOb.name = city
+      cityOb.country= 'Colombia'
+      cityOb.save
+    end
+    city_trip = CityTrip.new
+    city_trip.starting_date= start_date
+    city_trip.ending_date= end_date
+    city_trip.city = cityOb
+    city_trip.save
+    user = User.find cookies.signed[:user_id]
+    user.traveler.city_trips << city_trip
+    render :json => city_trip
+  end
+
 end
