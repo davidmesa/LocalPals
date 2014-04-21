@@ -59,7 +59,7 @@ body{
     background-attachment:fixed;
     text-align:center;
     margin-bottom:-20px;
-    height: 70px
+    height: 90px
 }
 
 .btn-add-city{
@@ -90,10 +90,12 @@ body{
     margin-right:auto;
     width:90%;
     margin-top:15px;
+    padding-left: 25px;
 }
 
 .pals #imagen:hover .img-activity{
     opacity: 1;
+
 }
 
 .local-activities #imagen:hover .img-activity{

@@ -32,8 +32,8 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
   feed: ->
     LocalPals.Vent.trigger("RemoveHome")
     Backbone.history.navigate("/feed")
-    @headerSessionView()
-    @sidebarView()
+    @headerSessionView() unless @sessionHeader
+    @sidebarView() unless @sidebar
     view = new LocalPals.Views.Feed()
     $('#container').html(view.render().el)
 
@@ -42,12 +42,12 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     $('#header').html(@basicHeader.render().el)
 
   headerSessionView: ->
-    sessionHeader = new LocalPals.Views.HeaderSession()
-    $('#header').html(sessionHeader.render().el)
+    @sessionHeader = new LocalPals.Views.HeaderSession()
+    $('#header').html(@sessionHeader.render().el)
 
   sidebarView: ->
-    sidebar = new LocalPals.Views.Sidebar()
-    $('#sidebar').html(sidebar.render().el)
+    @sidebar = new LocalPals.Views.Sidebar()
+    $('#sidebar').html(@sidebar.render().el)
 
   agregarciudad: ->
     Backbone.history.navigate("/addcity")
@@ -58,8 +58,8 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @feed()
 
   activities: ->
-    @headerSessionView()
-    @sidebarView()
+    @headerSessionView() unless @sessionHeader
+    @sidebarView() unless @sidebar
     @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()}))
 
   newActivity: ->

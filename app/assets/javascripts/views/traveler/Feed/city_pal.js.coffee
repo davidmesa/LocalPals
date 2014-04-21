@@ -1,6 +1,6 @@
 class LocalPals.Views.CityPal extends Backbone.View
 
-  className: "imagen"
+  className: "imagen col-md-4"
 
   template: JST['traveler/feed/pal']
 
@@ -20,5 +20,6 @@ class LocalPals.Views.CityPal extends Backbone.View
     @unbind()
 
   render: ->
+    console.log("Entra y carga")
     @$el.html(@template({model: @model}))
     @

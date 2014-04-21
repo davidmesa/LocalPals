@@ -4,8 +4,8 @@ class FeedTravelerController < ApplicationController
 
 
   def show
-    user_id = cookies.signed[:user_id]
-    user_id = 3 unless user_id
+    ##user_id = cookies.signed[:user_id]
+    user_id = 3 ##unless user_id
     user = User.find user_id
 
     cities = []
@@ -22,7 +22,10 @@ class FeedTravelerController < ApplicationController
 
     activities.each do |activity|
       response[activity.local.user.city.name] = [] unless response.has_key? activity.local.user.city.name
-      response[activity.local.user.city.name] << activity
+      responseParts = {}
+      responseParts['activity'] = activity
+      responseParts['local'] = activity.local
+      response[activity.local.user.city.name] << responseParts
     end
 
     render :json => response.to_a

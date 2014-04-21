@@ -1,4 +1,4 @@
-<div id="imagen" class="col-md-4">
-  <a href="activity.html"><img src="<%= @model.img_activity %>" alt="Responsive image" class="img-activity"></a>
-  <img src="<%= @model.img_pal %>" alt="Responsive image" class="img-pal">
+<div id="imagen">
+  <a href="activity.html"><img src="<%= @model.activity.img %>" alt="Responsive image" class="img-activity"></a>
+  <img src="<%= @model.local.img %>" alt="Responsive image" class="img-pal">
 </div>
