@@ -1,6 +1,6 @@
 <div id="content" class="content">
   <div id="add-city" class="row">
-    <a id='activityDetails' href="" id="add_city"><button type="button" class="btn btn-add-city">Add City</button></a>
+    <a href="" id="add_city"><button type="button" class="btn btn-add-city">Add City</button></a>
   </div>
   <div id="cities"></div>
 </div>

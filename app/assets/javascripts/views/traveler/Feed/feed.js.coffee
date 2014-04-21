@@ -19,6 +19,7 @@ class LocalPals.Views.Feed extends Backbone.View
     @
 
   addCity: (e) ->
+    console.log("Entra a activity")
     e.preventDefault()
     LocalPals.Vent.trigger("addCity")
 
