@@ -9,5 +9,6 @@ class LocalPals.Views.CityPal extends Backbone.View
     @unbind()
 
   render: ->
+    console.log("Entra y carga")
     @$el.html(@template({model: @model}))
     @

@@ -6,7 +6,6 @@ class LocalPals.Views.CityTrip extends Backbone.View
   initialize: ->
     @childViews = []
     @city_pals = @model.attributes[1]
-    console.log(@city_pals)
     @city_pals.forEach(@renderCityPals, @)
 
   removeFeed: ->
@@ -17,9 +16,12 @@ class LocalPals.Views.CityTrip extends Backbone.View
 
   render: ->
     @$el.html(@template({model: @model.attributes}))
+    @childViews = []
+    @city_pals = @model.attributes[1]
+    @city_pals.forEach(@renderCityPals, @)
     @
 
   renderCityPals: (model) ->
     v = new LocalPals.Views.CityPal({ model: model })
     @childViews.push(v)
-    @$el.append(v.render().el)
+    @$('.pals').append(v.render().el)
