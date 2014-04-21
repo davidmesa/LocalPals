@@ -1,0 +1,20 @@
+<div id="imagen" class="col-md-3">
+    <img src="/act1.jpg" alt="Responsive image" class="img-activity">
+        <p>
+            <button id="btn-photo" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-camera"></span> Chose photo</button>
+        </p>
+        <img src="/pal1.jpg" alt="Responsive image" class="img-pal"/>
+    </img>
+</div>
+<div id="info-pal" class="col-md-8">
+    <div class="col-md-8 info-tag">
+        <br>
+        <nombre> <%= @model.name %>. </nombre>
+        <h3> Age: 21</h3>
+        <h3> Languages: spanish, english </h3>
+        <h3> Interests: photography, arts, party </h3>
+    </div>
+    <div class="tag-tail col-md-4">
+        <img src="/tagFinal.png" style="height:inherit" />
+    </div>
+</div>

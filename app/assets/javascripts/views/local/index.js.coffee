@@ -10,14 +10,18 @@ class LocalPals.Views.LocalIndex extends Backbone.View
     @listenTo LocalPals.Vent, "project:create", @addToCollection
     @listenTo @collection,"add", @renderActivity
     @collection.fetch({reset: true})
-    @model.fetch()
+
 
   render: ->
-    $(@el).html(@template({model: @model.attributes}))
+    $(@el).html(@template())
+    @localHeaderView()
     console.log(@collection.size())
-    console.log(@model.toJSON())
     @collection.forEach(@renderActivity, @)
     @
+
+  localHeaderView: ->
+    v = new LocalPals.Views.LocalHeader({ model: new LocalPals.Models.User() })
+    @$('#activity-header').append(v.render().el)
 
   renderActivity: (model) ->
     console.log(model)
@@ -29,3 +33,5 @@ class LocalPals.Views.LocalIndex extends Backbone.View
 
   addToCollection: (model) ->
     @collection.add model
+
+

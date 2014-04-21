@@ -47,13 +47,13 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
   activities: ->
     @headerSessionView()
     @sidebarView()
-    @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities(), model: new LocalPals.Models.User()}))
+    @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()}))
 
   newActivity: ->
     @swapContainer(new LocalPals.Views.NewActivity({model: new LocalPals.Models.Activity()}))
 
   swapContainerToActivity: ->
-    @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities(), model: new LocalPals.Models.User()}))
+    @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()}))
     Backbone.history.navigate("/activities")
 
 

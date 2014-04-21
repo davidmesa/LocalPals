@@ -7,7 +7,12 @@ class LocalPals.Views.NewActivity extends Backbone.View
 
   render: ->
     $(@el).html(@template({model: @model.attributes}))
+    @activityHeaderView()
     @
+
+  activityHeaderView: ->
+    v = new LocalPals.Views.ActivityHeader({ model: new LocalPals.Models.User() })
+    @$('#activity-header').append(v.render().el)
 
   saveActivity: (e) ->
     e.preventDefault()

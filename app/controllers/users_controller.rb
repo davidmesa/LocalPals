@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   end
 
   def get_user
+    printf('obtiene usuario')
     user_id = cookies.signed[:user_id]
     user_id = 22 unless user_id
     user = User.find user_id
@@ -49,7 +50,6 @@ class UsersController < ApplicationController
   end
 
   def login
-    printf("entra a login en controller")
     login = params[:login]
     password = params[:password]
 
