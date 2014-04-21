@@ -1,6 +1,6 @@
 class LocalPals.Views.CityPal extends Backbone.View
 
-  className: "imagen"
+  className: "imagen col-md-4"
 
   template: JST['traveler/feed/pal']
 
