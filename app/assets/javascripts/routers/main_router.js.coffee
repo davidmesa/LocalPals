@@ -15,6 +15,7 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @listenTo LocalPals.Vent, "login", @feed
     @listenTo LocalPals.Vent, "activity:create", @activities
     @listenTo LocalPals.Vent, "activity:show", @activityShow
+    @listenTo LocalPals.Vent, "activity:traveler:show", @activityTravelerDetails
 
   index: ->
     LocalPals.Vent.trigger("GoHome")
@@ -82,3 +83,5 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     m = new LocalPals.Models.Activity({ id: id })
     @swapContainer(new LocalPals.Views.ActivityDetails({ model: m }))
 
+  activityTravelerDetails: (model) ->
+    @swapContainer(new LocalPals.Views.CityPalDetails({ model: model }))
