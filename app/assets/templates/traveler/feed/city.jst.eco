@@ -15,7 +15,7 @@
 
                 <div class="fecha col-md-offset-2 col-md-8">
                     <h1>Select your dates of stay:</h1>
-                    <form action="feed.html">
+                    <form action="/#feed">
                         <div class="col-md-6">
                             <h4>Start</h4>
                             <div class="form-group">
