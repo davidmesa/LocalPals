@@ -23,6 +23,11 @@ class ActivitiesController < ApplicationController
     respond_with(activity)
   end
 
+  def show
+    printf('entro a show activity')
+    @activity = Activity.find(params[:id])
+    respond_with(@activity)
+  end
   private
 
   def activity_params

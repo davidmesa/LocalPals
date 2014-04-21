@@ -6,12 +6,14 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     'addcity':'addcity'
     'activities/new': 'newActivity'
     'feed' : 'feed'
+    'activities/:id': 'showActivity'
 
   initialize: ->
     @listenTo LocalPals.Vent, "registration", @registration
     @listenTo LocalPals.Vent, "agregarciudad", @agregarciudad
     @listenTo LocalPals.Vent, "login", @login
     @listenTo LocalPals.Vent, "activity:create", @activities
+    @listenTo LocalPals.Vent, "activity:show", @activityShow
 
   index: ->
     @headerView()
@@ -62,16 +64,23 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()}))
     Backbone.history.navigate("/activities")
 
-
-
   swapContainer: (view) ->
     @currentContainerView.remove() if @currentContainerView
     @currentContainerView = view
     $('#container').html(@currentContainerView.render().el)
-
 
   addcity: ->
     @headerView()
     @sidebarView()
     view = new LocalPals.Views.TravelerCity({collection: new LocalPals.Collections.Cities})
     $('#container').html(view.render().el)
+
+  activityShow: (model) ->
+    @swapContainer(new LocalPals.Views.ActivityDetails({ model: model }))
+
+  showActivity: (id) ->
+    @headerView()
+    @sidebarView()
+    m = new LocalPals.Models.Activity({ id: id })
+    @swapContainer(new LocalPals.Views.ActivityDetails({ model: m }))
+

@@ -1,6 +1,6 @@
 class LocalPals.Models.Activity extends Backbone.Model
 
-  url: '/activities'
+  urlRoot: '/activities'
 
 class LocalPals.Models.User extends Backbone.Model
 
