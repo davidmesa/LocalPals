@@ -45,7 +45,7 @@
                          </div>
 
                          <div class="col-md-offset-11">
-                               <button type="submit" class="btn btn-default" style="margin-top:20px; margin-bottom:20px;">Submit</button>
+                               <button id="agregarciudad" type="submit" class="btn btn-submit btn-lg" style="margin-top:20px; margin-bottom:20px;">Add City</button>
                          </div>
 
                     </form>

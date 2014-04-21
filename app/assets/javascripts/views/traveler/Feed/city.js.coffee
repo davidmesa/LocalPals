@@ -2,8 +2,8 @@ class LocalPals.Views.TravelerCity extends Backbone.View
 
   template: JST['traveler/feed/city']
 
-  initialize: ->
 
+  initialize: ->
 
   render: ->
     $(@el).html(@template())

@@ -9,6 +9,7 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
 
   initialize: ->
     @listenTo LocalPals.Vent, "registration", @registration
+    @listenTo LocalPals.Vent, "agregarciudad", @agregarciudad
     @listenTo LocalPals.Vent, "login", @login
     @listenTo LocalPals.Vent, "activity:create", @activities
 
@@ -33,6 +34,11 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     Backbone.history.navigate("/users/new")
     registrationView = new LocalPals.Views.Registration()
     $('#container').html(registrationView.render().el)
+
+  agregarciudad: ->
+    registrationView = new LocalPals.Views.HomeIndex()
+    $('#container').html(registrationView.render().el)
+
 
   login: ->
     Backbone.history.navigate("/feed")
