@@ -5,7 +5,9 @@ class ActivitiesController < ApplicationController
     printf('entra a index')
     user_id = cookies.signed[:user_id]
     user_id = 22 unless user_id
-    @activities = Activity.where local_id: user_id
+    user = User.find user_id
+
+    @activities = Activity.where local: user.local
     respond_with @activities do |format|
       format.json { render json: @activities.to_json }
     end
@@ -15,7 +17,8 @@ class ActivitiesController < ApplicationController
     activity = Activity.new(activity_params)
     user_id = cookies.signed[:user_id]
     user_id = 22 unless user_id
-    activity.local_id = user_id
+    user = User.find user_id
+    activity.local = user.local
     getInterests(params[:interests]).each do |interest|
       activity.interests << interest
     end

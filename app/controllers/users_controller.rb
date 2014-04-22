@@ -10,9 +10,15 @@ class UsersController < ApplicationController
     else
 
       city_name = params[:city]
-      city = City.new
-      city.name = city_name
-      city.save()
+      city = City.find_by name: city_name
+      if (city)
+        printf('Ciudad ya existe')
+      else
+        printf('Ciudad no existe')
+        city = City.new
+        city.name = city_name
+        city.save()
+      end
 
       user = User.new(user_params)
       user.city = city

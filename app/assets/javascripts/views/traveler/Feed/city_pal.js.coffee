@@ -12,7 +12,7 @@ class LocalPals.Views.CityPal extends Backbone.View
 
   activityDetails: (e) ->
     e.preventDefault()
-    LocalPals.Vent.trigger('activity:traveler:show')
+    LocalPals.Vent.trigger 'activity:traveler:show', @model
 
 
   removeFeed: ->
@@ -20,6 +20,6 @@ class LocalPals.Views.CityPal extends Backbone.View
     @unbind()
 
   render: ->
-    console.log("Entra y carga")
+    console.log(@model)
     @$el.html(@template({model: @model}))
     @

@@ -9,7 +9,7 @@
 <div id="info-pal" class="col-md-8">
     <div class="col-md-8 info-tag">
         <br>
-        <nombre> <%= @model.name %>. </nombre>
+        <nombre></nombre>
         <h3> Age: 21</h3>
         <h3> Languages: spanish, english </h3>
         <h3> Interests: photography, arts, party </h3>

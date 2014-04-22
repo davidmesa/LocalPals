@@ -1,11 +1,11 @@
 <div id="content" class="content-activity">
   <div class="col-md-offset-1">
     <div id="activity-header" class="row">
-      <div id="imagen" class="col-md-3"> <img src="assets/img/act1.jpg" alt="Responsive image" class="img-activity" />
+      <div id="imagen" class="col-md-3"> <img src="/act1.jpg" alt="Responsive image" class="img-activity" />
         <p>
           <button id="btn-going" type="button" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Going</button>
         </p>
-        <img src="assets/img/pal1.jpg" alt="Responsive image" class="img-pal"/> </img> </div>
+        <img src="<%= @model.local.img %>" alt="Responsive image" class="img-pal"/> </img> </div>
       <div id="info-pal" class="col-md-8">
         <div class="col-md-8 info-tag"> <br />
           <nombre> Ma. Camila Ángel </nombre>
@@ -13,23 +13,16 @@
           <h3> Languages: spanish, english </h3>
           <h3> Interests: photography, arts, party </h3>
         </div>
-        <div class="tag-tail col-md-4"> <img src="assets/img/tagFinal.png" style="height:inherit" /> </div>
+        <div class="tag-tail col-md-4"> <img src="/tagFinal.png" style="height:inherit" /> </div>
       </div>
     </div>
     <div id="activity-content" class="row col-md-11">
       <div class="col-md-offset-1" style="margin-top:15%">
-        <nombre> La Bolera Saloon </nombre>
-        <h3> <span class="glyphicon glyphicon-map-marker"></span> Adress: Calle 85 N 14-05, Bogotá, Cundinamarca, Colombia</h3>
-        <h3> <span class="glyphicon glyphicon-calendar"></span> Starts: 8:00 pm, Friday, April 04 </h3>
-        <h3> Ends: 1:00 pm, Saturday, April 05 </h3>
-        <h3> Description: La Bolera Saloon abre sus puertas para ofrecer a sus clientes un espacio
-          donde encontrarán bolos, billares y juegos de mesa como el tradicional “cacho”, combinados
-          con una carta de comida americana cuidadosamente seleccionada y exquisitamente servida,
-          como las mini burgers, alitas deshuesadas con salsa búfalo, dips de alcachofa y espinaca,
-          entre otros. El ambiente de La Bolera Saloon también prende las noches de la ciudad con
-          una selección de éxitos de rock, funk y soul de todas las décadas, además de una amplia
-          gama de licores y cocteles para todos los gustos, incluido el ponche muy al estilo de La
-          Bolera Saloon. <br />
+        <nombre> <%= @model.activity.name %> </nombre>
+        <h3> <span class="glyphicon glyphicon-map-marker"></span> Adress: <%= @model.activity.address %></h3>
+        <h3> <span class="glyphicon glyphicon-calendar"></span> Starts: <%= @model.activity.start_date %> </h3>
+        <h3> Ends: <%= @model.activity.end_date %> </h3>
+        <h3> Description: <%= @model.activity.description %> <br />
           <br />
         </h3>
       </div>
@@ -37,7 +30,7 @@
     <div id="reviews" class="col-md-10">
       <nombre> Reviews </nombre>
       <div class="review row">
-        <div class="col-md-2"> <img src="assets/img/traveler1.png" alt="Responsive image" class="img-local"/> </div>
+        <div class="col-md-2"> <img src="/traveler1.png" alt="Responsive image" class="img-local"/> </div>
         <div class="comment col-md-9">
           <h3> I am so grateful that my time in Bogota included the opportunity to be shown around
             by locals. What a great way to get  valuable insights and get to meet the people who
@@ -45,7 +38,7 @@
         </div>
       </div>
       <div class="review row">
-        <div class="col-md-2"> <img src="assets/img/traveler2.png" alt="Responsive image" class="img-local"/> </div>
+        <div class="col-md-2"> <img src="/traveler2.png" alt="Responsive image" class="img-local"/> </div>
         <div class="comment col-md-9">
           <h3> I had an amazing time with Maca! It was just amazing to see the real face of Bogotá! </h3>
         </div>
