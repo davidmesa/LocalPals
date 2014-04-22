@@ -145,16 +145,26 @@
       geocoder.geocode({'latLng': e.latLng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK)
         {
-
-        document.getElementById('lblciudad').value=results[1].formatted_address;
-        document.getElementById('titulo').innerHTML='You has selected: '+ results[1].formatted_address;
+        var rta= results[1].formatted_address;
+        var arreglo=rta.split(',');
+            if(arreglo.length>=3)
+            {
+             var ciudad=arreglo[arreglo.length-3];
+             ciudad.trim();
+             document.getElementById('lblciudad').value=ciudad;
+             document.getElementById('titulo').innerHTML='You has selected '+ ciudad+ ' city';
+            }
+            else
+            {
+                 document.getElementById('titulo').innerHTML='Try another location, you have to select a city';
+            }
 
         if(marker==null)
         {
            marker = new google.maps.Marker({
            position: e.latLng,
            animation: google.maps.Animation.DROP,
-           flat:true,
+           icon:'https://dl.dropboxusercontent.com/u/6372527/c.png',
            map: map
            });
         }
