@@ -2,6 +2,11 @@ class LocalPals.Views.MainView extends Backbone.View
 
   template: JST['main_view']
 
+  initialize: ->
+    @listenTo LocalPals.Vent, "registration", @swapToRegistration
+    @listenTo LocalPals.Vent, "login", @swapToFeed(new LocalPals.Models.UserLogin())
+    @listenTo LocalPals.Vent, "register", @swapToFeed(new LocalPals.Models.UserRegistration())
+
   render: (contentView) ->
     $(@el).html(@template())
     console.log('render main')
@@ -21,12 +26,20 @@ class LocalPals.Views.MainView extends Backbone.View
     @renderHeader(new LocalPals.Views.HeaderRightSignedIn())
 
   renderHeader: (rightHeaderView) ->
-    header = new LocalPals.Views.Header()
-    @$('#header').append(header.render(rightHeaderView).el)
+    @currentHeaderView.remove() if(@currentHeaderView)
+    @currentHeaderView = new LocalPals.Views.Header()
+    @$('#header').append(@currentHeaderView.render(rightHeaderView).el)
 
-  renderContent: (contentView) ->
-    @$('#content').append(contentView.render().el)
+  renderContent: (contentView, mainView) ->
+    @currentContentView.remove() if (@currentContentView)
+    @currentContentView = contentView
+    @$('#content').append(@currentContentView.render(mainView).el)
 
-  registration: (e) ->
-    e.preventDefault()
-    LocalPals.Vent.trigger('registration')
+  swapToRegistration: ->
+    @renderContent(new LocalPals.Views.Registration())
+
+  swapToFeed: (user) ->
+    @renderHeader(new LocalPals.Views.HeaderRightSignedIn({user: user}))
+    mainView = new LocalPals.Views.Feed()
+    contentView = new LocalPals.Views.SignedInMainView({user: user})
+    @renderContent(contentView, mainView)

@@ -10,9 +10,9 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     'activities/:id': 'showActivity'
 
   initialize: ->
-    @listenTo LocalPals.Vent, "registration", @registration
+    #@listenTo LocalPals.Vent, "registration", @registration
     @listenTo LocalPals.Vent, "addCity", @agregarciudad
-    @listenTo LocalPals.Vent, "login", @feed
+    #@listenTo LocalPals.Vent, "login", @feed
     @listenTo LocalPals.Vent, "activity:create", @activities
     @listenTo LocalPals.Vent, "activity:show", @activityShow
     @listenTo LocalPals.Vent, "activity:traveler:show", @activityTravelerDetails
@@ -22,15 +22,17 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     #@headerView() unless @basicHeader
     #view = new LocalPals.Views.LandingPage()
     #$('#container').html(view.render().el)
+    console.log('entra a index en routers')
     view = new LocalPals.Views.MainView({signedIn: false})
+    console.log('despues de new main view')
     $('#container').html(view.render(new LocalPals.Views.LandingPage()).el)
 
 
-  registration: ->
-    Backbone.history.navigate("/users/new")
-    @headerView() unless @basicHeader
-    registrationView = new LocalPals.Views.Registration()
-    $('#container').html(registrationView.render().el)
+  #registration: ->
+    #Backbone.history.navigate("/users/new")
+    #@headerView() unless @basicHeader
+    #registrationView = new LocalPals.Views.Registration()
+    #$('#container').html(registrationView.render().el)
 
   feed: ->
     LocalPals.Vent.trigger("RemoveHome")
@@ -39,9 +41,11 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @sidebarView() unless @sidebar
     view = new LocalPals.Views.Feed()
     $('#container').html(view.render().el)
+    #view = new LocalPals.Views.MainView({signedIn: true})
+    #$('#container').html(view.render().el)
 
   headerView: ->
-    @basicHeader = new LocalPals.Views.Header()
+    @basicHeader = new LocalPals.Views.Header2()
     $('#header').html(@basicHeader.render().el)
 
   headerSessionView: ->

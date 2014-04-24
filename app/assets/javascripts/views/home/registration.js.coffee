@@ -31,7 +31,7 @@ class LocalPals.Views.Registration extends Backbone.View
     @model.set interests: @convertObject()
     console.log @model.toJSON()
     @model.save {},
-      success: (model) -> LocalPals.Vent.trigger "login", model
+      success: (model) -> LocalPals.Vent.trigger "register", model
 
   convertObject: ->
     paramObj = []

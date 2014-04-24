@@ -1,6 +1,6 @@
 class LocalPals.Views.Sidebar extends Backbone.View
 
-  template: JST['layout/sidebar']
+  template: JST['bars/sidebar']
 
   initialize: ->
     @listenTo LocalPals.Vent, "GoHome", @leaveSidebar
