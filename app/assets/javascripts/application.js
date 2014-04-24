@@ -18,6 +18,7 @@
 //= require local_pals
 //= require moment
 //= require bootstrap-datetimepicker
+//= require bootstrap
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
