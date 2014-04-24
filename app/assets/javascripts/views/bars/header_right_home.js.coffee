@@ -1,16 +1,9 @@
-class LocalPals.Views.Header2 extends Backbone.View
+class LocalPals.Views.HeaderRightHome extends Backbone.View
 
-  template: JST['layout/header']
+  template: JST['bars/header_right_home']
 
   events:
     "click #login": "login"
-
-  initialize: ->
-    @listenTo LocalPals.Vent, "RemoveHome", @leaveHeader
-
-  leaveHeader: ->
-    @remove
-    @off
 
   render: ->
     $(@el).html(@template())

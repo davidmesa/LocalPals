@@ -18,10 +18,13 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @listenTo LocalPals.Vent, "activity:traveler:show", @activityTravelerDetails
 
   index: ->
-    LocalPals.Vent.trigger("GoHome")
-    @headerView() unless @basicHeader
-    view = new LocalPals.Views.HomeIndex()
-    $('#container').html(view.render().el)
+    #LocalPals.Vent.trigger("GoHome")
+    #@headerView() unless @basicHeader
+    #view = new LocalPals.Views.LandingPage()
+    #$('#container').html(view.render().el)
+    view = new LocalPals.Views.MainView({signedIn: false})
+    $('#container').html(view.render(new LocalPals.Views.LandingPage()).el)
+
 
   registration: ->
     Backbone.history.navigate("/users/new")

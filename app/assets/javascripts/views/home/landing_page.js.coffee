@@ -1,4 +1,4 @@
-class LocalPals.Views.HomeIndex extends Backbone.View
+class LocalPals.Views.LandingPage extends Backbone.View
 
   template: JST['home/index']
 
