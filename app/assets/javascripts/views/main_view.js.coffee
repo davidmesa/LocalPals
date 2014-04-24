@@ -4,8 +4,8 @@ class LocalPals.Views.MainView extends Backbone.View
 
   initialize: ->
     @listenTo LocalPals.Vent, "registration", @swapToRegistration
-    @listenTo LocalPals.Vent, "login", @swapToFeed(new LocalPals.Models.UserLogin())
-    @listenTo LocalPals.Vent, "register", @swapToFeed(new LocalPals.Models.UserRegistration())
+    @listenTo LocalPals.Vent, "login", @swapToFeed
+    @listenTo LocalPals.Vent, "register", @swapToFeed
 
   render: (contentView) ->
     $(@el).html(@template())
@@ -39,6 +39,7 @@ class LocalPals.Views.MainView extends Backbone.View
     @renderContent(new LocalPals.Views.Registration())
 
   swapToFeed: (user) ->
+    console.log("Entra a swapToFeed")
     @renderHeader(new LocalPals.Views.HeaderRightSignedIn({user: user}))
     mainView = new LocalPals.Views.Feed()
     contentView = new LocalPals.Views.SignedInMainView({user: user})
