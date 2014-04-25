@@ -2,6 +2,12 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
 
   template: JST['signed-in/main_view']
 
+  initialize: ->
+    @listenTo LocalPals.Vent, 'addCity', @addCity
+
+  addCity: ->
+    @renderMain(new LocalPals.Views.TravelerCity())
+
   render: (mainView) ->
     $(@el).html(@template())
     @renderSideBar()

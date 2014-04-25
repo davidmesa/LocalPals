@@ -11,7 +11,7 @@ class LocalPals.Views.Feed extends Backbone.View
   removeFeed: ->
     @currentPostView.removeFeed()
     @remove
-    @off
+    @unbind
 
   render: ->
     $(@el).html(@template())
