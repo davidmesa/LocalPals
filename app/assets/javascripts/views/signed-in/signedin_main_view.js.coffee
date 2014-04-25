@@ -4,6 +4,7 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
 
   initialize: ->
     @listenTo LocalPals.Vent, 'addCity', @addCity
+    @listenTo LocalPals.Vent, "renderMain", @renderMain
 
   addCity: ->
     @renderMain(new LocalPals.Views.TravelerCity())
