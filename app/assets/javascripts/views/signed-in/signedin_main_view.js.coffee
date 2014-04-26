@@ -5,10 +5,15 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
   initialize: ->
     @listenTo LocalPals.Vent, "show:activities", @swapToLocal
     @listenTo LocalPals.Vent, "activity:create", @swapToLocal
+    @listenTo LocalPals.Vent, 'addCity', @addCity
+    @listenTo LocalPals.Vent, "renderMain", @renderMain
+
+  addCity: ->
+    @renderMain(new LocalPals.Views.TravelerCity())
 
   setUser: (user) ->
     @user = user
-
+    
   render: (mainView) ->
     console.log('LE LLEGA USUARIO?')
     console.log(@user)

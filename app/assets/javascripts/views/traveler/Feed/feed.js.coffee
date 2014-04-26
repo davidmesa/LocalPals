@@ -11,7 +11,7 @@ class LocalPals.Views.Feed extends Backbone.View
   removeFeed: ->
     @currentPostView.removeFeed()
     @remove
-    @off
+    @unbind
 
   render: ->
     $(@el).html(@template())
@@ -19,7 +19,6 @@ class LocalPals.Views.Feed extends Backbone.View
     @
 
   addCity: (e) ->
-    console.log("Entra a activity")
     e.preventDefault()
     LocalPals.Vent.trigger("addCity")
 

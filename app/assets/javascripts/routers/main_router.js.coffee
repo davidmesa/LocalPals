@@ -11,7 +11,7 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
 
   initialize: ->
     #@listenTo LocalPals.Vent, "registration", @registration
-    @listenTo LocalPals.Vent, "addCity", @agregarciudad
+    #@listenTo LocalPals.Vent, "addCity", @agregarciudad
     #@listenTo LocalPals.Vent, "login", @feed
     #@listenTo LocalPals.Vent, "activity:create", @activities
     @listenTo LocalPals.Vent, "activity:show", @activityShow
@@ -56,10 +56,10 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     @sidebar = new LocalPals.Views.Sidebar()
     $('#sidebar').html(@sidebar.render().el)
 
-  agregarciudad: ->
-    Backbone.history.navigate("/addcity")
-    cityview = new LocalPals.Views.TravelerCity()
-    $('#container').html(cityview.render().el)
+  #agregarciudad: ->
+  # Backbone.history.navigate("/addcity")
+  #  cityview = new LocalPals.Views.TravelerCity()
+  #  $('#container').html(cityview.render().el)
 
   loginLP: ->
     @feed()

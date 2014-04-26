@@ -2,15 +2,15 @@
 <div class="sidebar">
    <ul class="nav table-sidebar nav-stacked">
       <h5>Local</h5>
-      <li class="active"><a><span class="glyphicon glyphicon-user"> Profile</span></a></li>
+      <li><a id="sideProfile" href="/#profile"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
       <li><a id="activities" href=""><span class="glyphicon glyphicon-tags"> Activities</span></a></li>
    </ul>
    <hr/>
    <ul class="nav table-sidebar nav-stacked">
       <h5>Traveler</h5>
-      <li class="active"><a href="/#feed"><span class="glyphicon glyphicon-th"> Feed</span></a></li>
-      <li><a href=""><span class="glyphicon glyphicon-plane"> Trips</span></a></li>
-      <li><a><span class="glyphicon glyphicon-search"> Activity Search</span></a></li>
+      <li><a id="sideFeed" href="/#feed"><span class="glyphicon glyphicon-th"> Feed</span></a></li>
+      <li><a id="sideTrips" href="/#trips"><span class="glyphicon glyphicon-plane"> Trips</span></a></li>
+      <li><a id="sideSearch" href="/#search"><span class="glyphicon glyphicon-search"> Activity Search</span></a></li>
       <div class="filtro">
          <form>
             <div class="form-group">

@@ -3,21 +3,21 @@ class LocalPals.Views.TravelerCity extends Backbone.View
   template: JST['traveler/feed/city']
 
   events:
-    "click #agregarciudad": "agregarCiudad"
+    "click #addCityFeed": "addCityFeed"
 
   initialize: ->
-    @listenTo LocalPals.Vent, 'login', @removeAdd
+    @listenTo LocalPals.Vent, 'renderMain', @removeAdd
 
   removeAdd: ->
     @remove()
     @unbind()
 
-  agregarCiudad: (e) ->
+  addCityFeed: (e) ->
     e.preventDefault()
     model = new LocalPals.Models.AddCity()
     model = @getinfo(model)
     model.fetch()
-    LocalPals.Vent.trigger('login')
+    LocalPals.Vent.trigger("renderMain", new LocalPals.Views.Feed())
 
   render: ->
     $(@el).html(@template())
