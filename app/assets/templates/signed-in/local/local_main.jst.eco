@@ -1,0 +1,6 @@
+<div id="content" class="content-activity">
+    <div class="col-md-offset-1">
+        <div id="activity-header" class="row"></div>
+        <div id="local-activity-container" class="local-activities row"></div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 class LocalPals.Views.NewActivity extends Backbone.View
 
-  template: JST['local/new_activity']
+  template: JST['signed-in/local/new_activity']
 
   events:
     'click #submit': 'saveActivity'

@@ -1,6 +1,6 @@
 class LocalPals.Views.LocalActivity extends Backbone.View
 
-  template: JST['local/activity']
+  template: JST['signed-in/local/activity']
 
   events:
     "click #showDetails": "showDetails"
@@ -12,5 +12,5 @@ class LocalPals.Views.LocalActivity extends Backbone.View
 
   showDetails: (e) ->
     e.preventDefault()
-    LocalPals.Vent.trigger "activity:show", @model
-    Backbone.history.navigate("activities/" + @model.id)
+    LocalPals.Vent.trigger "show:activity", @model
+    #Backbone.history.navigate("activities/" + @model.id)

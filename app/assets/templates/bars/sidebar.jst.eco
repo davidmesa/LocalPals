@@ -3,7 +3,7 @@
    <ul class="nav table-sidebar nav-stacked">
       <h5>Local</h5>
       <li class="active"><a><span class="glyphicon glyphicon-user"> Profile</span></a></li>
-      <li><a href="/#activities"><span class="glyphicon glyphicon-tags"> Activities</span></a></li>
+      <li><a id="activities" href=""><span class="glyphicon glyphicon-tags"> Activities</span></a></li>
    </ul>
    <hr/>
    <ul class="nav table-sidebar nav-stacked">

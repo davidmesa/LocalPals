@@ -1,6 +1,6 @@
 class LocalPals.Views.ActivityDetails extends Backbone.View
 
-  template: JST['local/activity_details']
+  template: JST['signed-in/local/activity_details']
 
   initialize: ->
     @listenTo @model, "sync", @render

@@ -1,25 +1,3 @@
-<div id="content" class="content-activity">
-   <div class="col-md-offset-1">
-      <div id="activity-header" class="row">
-         <div id="imagen" class="col-md-3">
-            <img src="<%= @model.img %>" alt="Responsive image" class="img-activity">
-            <p>
-               <button id="btn-delete" type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-            </p>
-         </div>
-         <div id="info-pal" class="col-md-8">
-            <div class="col-md-8 info-tag">
-               <br>
-               <nombre> Ma. Camila Ángel </nombre>
-               <h3> Age: 21</h3>
-               <h3> Languages: spanish, english </h3>
-               <h3> Interests: photography, arts, party </h3>
-            </div>
-            <div class="tag-tail col-md-4">
-               <img src="/tagFinal.png" style="height:inherit" />
-            </div>
-         </div>
-      </div>
       <div id="activity-content" class="row col-md-11">
          <div class="col-md-offset-1" style="margin-top:15%">
             <nombre> <%= @model.name %> </nombre>
@@ -52,9 +30,4 @@
             <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact travelers </button>
          </p>
       </div>
-   </div>
-</div>
-<!-- Bootstrap core JavaScript
-   ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+

@@ -1,6 +1,6 @@
-class LocalPals.Views.ActivityHeader extends Backbone.View
+class LocalPals.Views.LocalHeader1 extends Backbone.View
 
-  template: JST['local/activity_header']
+  template: JST['signed-in/local/local_header']
 
   render: ->
     @user = @model

@@ -13,7 +13,7 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     #@listenTo LocalPals.Vent, "registration", @registration
     @listenTo LocalPals.Vent, "addCity", @agregarciudad
     #@listenTo LocalPals.Vent, "login", @feed
-    @listenTo LocalPals.Vent, "activity:create", @activities
+    #@listenTo LocalPals.Vent, "activity:create", @activities
     @listenTo LocalPals.Vent, "activity:show", @activityShow
     @listenTo LocalPals.Vent, "activity:traveler:show", @activityTravelerDetails
 
@@ -64,10 +64,10 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
   loginLP: ->
     @feed()
 
-  activities: ->
-    @headerSessionView() unless @sessionHeader
-    @sidebarView() unless @sidebar
-    @swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()}))
+  #activities: ->
+    #@headerSessionView() unless @sessionHeader
+    #@sidebarView() unless @sidebar
+    #@swapContainer(new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()}))
 
   newActivity: ->
     @swapContainer(new LocalPals.Views.NewActivity({model: new LocalPals.Models.Activity()}))

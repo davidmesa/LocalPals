@@ -39,8 +39,11 @@ class LocalPals.Views.MainView extends Backbone.View
     @renderContent(new LocalPals.Views.Registration())
 
   swapToFeed: (user) ->
-    console.log("Entra a swapToFeed")
-    @renderHeader(new LocalPals.Views.HeaderRightSignedIn({user: user}))
+    @user = user
+    header = new LocalPals.Views.HeaderRightSignedIn()
+    header.setUser(user)
+    @renderHeader(header)
     mainView = new LocalPals.Views.Feed()
-    contentView = new LocalPals.Views.SignedInMainView({user: user})
+    contentView = new LocalPals.Views.SignedInMainView()
+    contentView.setUser(user)
     @renderContent(contentView, mainView)

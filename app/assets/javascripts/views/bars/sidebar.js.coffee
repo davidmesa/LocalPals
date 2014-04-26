@@ -2,6 +2,9 @@ class LocalPals.Views.Sidebar extends Backbone.View
 
   template: JST['bars/sidebar']
 
+  events:
+    "click #activities": "showActivities"
+
   initialize: ->
     @listenTo LocalPals.Vent, "GoHome", @leaveSidebar
 
@@ -12,3 +15,7 @@ class LocalPals.Views.Sidebar extends Backbone.View
   render: ->
     $(@el).html(@template())
     @
+
+  showActivities: (e) ->
+    e.preventDefault()
+    LocalPals.Vent.trigger "show:activities"
