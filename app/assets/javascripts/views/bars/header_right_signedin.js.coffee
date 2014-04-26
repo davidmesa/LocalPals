@@ -13,7 +13,7 @@ class LocalPals.Views.HeaderRightSignedIn extends Backbone.View
   render: ->
     console.log "Crea Header oosi"
     $(@el).html(@template())
-    @$('#nombre').html(@user.attributes.name)
+    @$('#nombre').html(@user.attributes.user.name)
     @
 
   logout: ->

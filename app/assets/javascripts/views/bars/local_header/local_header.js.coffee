@@ -6,7 +6,6 @@ class LocalPals.Views.LocalHeader extends Backbone.View
     @user = user
 
   render: (view) ->
-    $(@el).html(@template())
+    $(@el).html(@template({model: @user.attributes}))
     @$('#image-header-local').append(view.render().el)
-    @$('nombre').html(@user.attributes.name)
     @

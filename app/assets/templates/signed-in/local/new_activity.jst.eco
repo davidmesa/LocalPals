@@ -1,7 +1,3 @@
-<div id="content" class="content-activity">
-<div class="col-md-offset-1">
-   <div id="activity-header" class="row">
-   </div>
    <div id="activity-content" class="row col-md-11">
       <div class="col-md-10 col-md-offset-1" style="margin-top:130px">
          <form role="form" action="/#activities">
@@ -270,20 +266,26 @@
          </form>
       </div>
    </div>
-</div>
-</div>
-<!-- Bootstrap core JavaScript
-   ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript">
-   $(function() {
-   $('#datetimepicker4').datetimepicker({
-     pickTime: false
-   });
-   });
-   $(function() {
-   $('#datetimepicker5').datetimepicker({
-     pickTime: false
-   });
-   });
-</script>
+
+   <!-- Bootstrap core JavaScript
+       ================================================== -->
+       <!-- Placed at the end of the document so the pages load faster -->
+
+       <script type="text/javascript"
+        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+       </script>
+       <script type="text/javascript"
+        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+       </script>
+       <script type="text/javascript">
+     $(function() {
+       $('#datetimepicker4').datetimepicker({
+         pickTime: false
+       });
+     });
+           $(function() {
+       $('#datetimepicker5').datetimepicker({
+         pickTime: false
+       });
+     });
+   </script>

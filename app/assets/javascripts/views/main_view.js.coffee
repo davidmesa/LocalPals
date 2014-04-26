@@ -40,6 +40,8 @@ class LocalPals.Views.MainView extends Backbone.View
 
   swapToFeed: (user) ->
     @user = user
+    console.log("USUARIO QUE HIZO LOGIN")
+    console.log(@user.toJSON())
     header = new LocalPals.Views.HeaderRightSignedIn()
     header.setUser(user)
     @renderHeader(header)

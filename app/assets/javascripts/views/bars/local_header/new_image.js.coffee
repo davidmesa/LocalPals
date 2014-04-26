@@ -1,6 +1,6 @@
-class LocalPals.Views.ImageIndex extends Backbone.View
+class LocalPals.Views.ImageNew extends Backbone.View
 
-  template: JST['bars/local_header/index_image']
+  template: JST['bars/local_header/new_image']
 
   setUser: (user) ->
     @user = user

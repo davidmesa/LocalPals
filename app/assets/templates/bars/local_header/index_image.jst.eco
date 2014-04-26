@@ -1,3 +1,3 @@
 <div id="imagen-profile" class="col-md-3">
-    <img src="/pal1.jpg" alt="Responsive image" class="img-local-profile"></img>
+    <img src="<%= @model.local.img %>" alt="Responsive image" class="img-local-profile"></img>
 </div>

@@ -1,5 +1,5 @@
 <div id="imagen" class="col-md-3">
-    <img src="" alt="Responsive image" class="img-activity">
+    <img src="<%= @model.img %>" alt="Responsive image" class="img-activity">
         <p>
             <button id="btn-delete" type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-trash"></span> Delete</button>
         </p>

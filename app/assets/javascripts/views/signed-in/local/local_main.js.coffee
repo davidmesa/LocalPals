@@ -5,6 +5,8 @@ class LocalPals.Views.LocalMain extends Backbone.View
   initialize: ->
     @listenTo LocalPals.Vent, "new:activity", @swapToNewActivity
     @listenTo LocalPals.Vent, "show:activity", @swapToShowActivity
+    @listenTo LocalPals.Vent, "activity:create", @swapToLocalIndex
+
 
   setUser: (user) ->
     @user = user
@@ -36,12 +38,21 @@ class LocalPals.Views.LocalMain extends Backbone.View
     @$('#activity-header').append(@currentHeaderView.render(headerImage).el)
 
   swapToNewActivity: ->
+    newActivityHeader = new LocalPals.Views.ImageNew()
+    newActivityHeader.setUser(@user)
+    @renderHeader(newActivityHeader)
     newActivityView = new LocalPals.Views.NewActivity({model: new LocalPals.Models.Activity()})
     @renderContent(newActivityView)
 
   swapToShowActivity: (model) ->
-    activityDetailHeader = new LocalPals.Views.ImageDetails()
-    activityDetailHeader.setUser(@user)
+    activityDetailHeader = new LocalPals.Views.ImageDetails({ model: model })
     @renderHeader(activityDetailHeader)
     activityDetailsView = new LocalPals.Views.ActivityDetails({ model: model })
     @renderContent(activityDetailsView)
+
+  swapToLocalIndex: ->
+    localHeaderView = new LocalPals.Views.ImageIndex()
+    localHeaderView.setUser(@user)
+    @renderHeader(localHeaderView)
+    localMainContent = new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()})
+    @renderContent(localMainContent)

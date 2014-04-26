@@ -63,13 +63,19 @@ class UsersController < ApplicationController
     if user
       if (user.password==password)
         cookies.signed[:user_id] = user.id
-        respond_with(user)
+        #respond_with(user)
+        response = {}
+        response['user'] = user
+        response['local'] = user.local
+        render :json => response
       else
         render json: {errors: 'Wrong password'}, :status => 422
       end
     else
       render json: {errors: 'User does not exist'}, :status => 422
     end
+
+
 
   end
 

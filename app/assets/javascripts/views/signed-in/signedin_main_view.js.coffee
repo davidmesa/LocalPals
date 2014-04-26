@@ -4,19 +4,11 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
 
   initialize: ->
     @listenTo LocalPals.Vent, "show:activities", @swapToLocal
-    @listenTo LocalPals.Vent, "activity:create", @swapToLocal
-    @listenTo LocalPals.Vent, 'addCity', @addCity
-    @listenTo LocalPals.Vent, "renderMain", @renderMain
-
-  addCity: ->
-    @renderMain(new LocalPals.Views.TravelerCity())
 
   setUser: (user) ->
     @user = user
-    
+
   render: (mainView) ->
-    console.log('LE LLEGA USUARIO?')
-    console.log(@user)
     $(@el).html(@template())
     @renderSideBar()
     @renderMain(mainView)
@@ -42,7 +34,3 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
     @renderMain(localMainView)
     #activitiesView = new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()})
     #@renderMain(activitiesView)
-
-  swapToNewActivity: ->
-    newActivityView = new LocalPals.Views.NewActivity({model: new LocalPals.Models.Activity()})
-    @renderMain(newActivityView)

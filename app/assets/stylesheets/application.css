@@ -198,7 +198,6 @@ nombre, .nombre
     opacity:0;
     margin-top: 115px;
     margin-left: 80px;
-    margin-bottom: -100%;
 }
 
 #btn-delete{
@@ -206,7 +205,6 @@ nombre, .nombre
     opacity:0;
     margin-top: 115px;
     margin-left: 80px;
-    margin-bottom: 100%;
 }
 
 #btn-photo{
@@ -214,7 +212,6 @@ nombre, .nombre
     opacity:0;
     margin-top: 115px;
     margin-left: 55px;
-    margin-bottom: -100%;
 }
 
 #imagen:hover .btn-success {
@@ -245,7 +242,6 @@ nombre, .nombre
 
 .img-pal{
     margin-left:55%;
-    margin-top: 55%;
     position:relative;
     border-radius: 50%;
     height: 150px;
