@@ -34,10 +34,9 @@
                             <label for="ConfirmInputPassword">Birthday:</label>
                         	<div class="form-group">
                                 <div id="datetimepicker4" class="input-group">
-                                    <input data-format="dd/MM/yyyy" type="text" id="birthday" class="form-control" placeholder="Enter birthday"></input>
+                                    <input data-format="MM/dd/yyyy" type="text" id="birthday" class="form-control" placeholder="Enter birthday"></input>
                                     <span class="input-group-addon">
                                         <span class="add-on">
-                                            <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </span>
                                 </div>
