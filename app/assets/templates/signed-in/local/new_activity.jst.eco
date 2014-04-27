@@ -14,11 +14,10 @@
                   <label>Starts</label>
                   <div class="form-group">
                      <div id="datetimepicker4" class="input-group">
-                        <input id="starts" data-format="dd/MM/yyyy" type="text" class="form-control" placeholder=""></input>
+                        <input id="starts" data-format="MM/dd/yyyy" type="text" class="form-control" placeholder=""></input>
                         <span class="input-group-addon">
-                        <span class="add-on">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+                          <span class="add-on">
+                          </span>
                         </span>
                      </div>
                   </div>
@@ -27,11 +26,10 @@
                   <label>Ends</label>
                   <div class="form-group">
                      <div id="datetimepicker5" class="input-group">
-                        <input id="ends" data-format="dd/MM/yyyy" type="text" class="form-control" placeholder=""></input>
+                        <input id="ends" data-format="MM/dd/yyyy" type="text" class="form-control" placeholder=""></input>
                         <span class="input-group-addon">
-                        <span class="add-on">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+                          <span class="add-on">
+                          </span>
                         </span>
                      </div>
                   </div>
@@ -270,14 +268,7 @@
    <!-- Bootstrap core JavaScript
        ================================================== -->
        <!-- Placed at the end of the document so the pages load faster -->
-
-       <script type="text/javascript"
-        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-       </script>
-       <script type="text/javascript"
-        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-       </script>
-       <script type="text/javascript">
+   <script type="text/javascript">
      $(function() {
        $('#datetimepicker4').datetimepicker({
          pickTime: false

@@ -20,10 +20,9 @@
                             <h4>Start</h4>
                             <div class="form-group">
                                 <div id="datetimepicker4" class="input-group">
-                                       <input name="start_date" data-format="dd/MM/yyyy" type="text" class="form-control" placeholder=""></input>
+                                       <input name="start_date" data-format="MM/dd/yyyy" type="text" class="form-control" placeholder=""></input>
                                        <span class="input-group-addon">
                                            <span class="add-on">
-                                              <span class="glyphicon glyphicon-calendar"></span>
                                            </span>
                                        </span>
                                  </div>
@@ -34,10 +33,9 @@
                             <h4>End</h4>
                             <div class="form-group">
       <div id="datetimepicker5" class="input-group">
-        <input name="end_date" data-format="dd/MM/yyyy" type="text" class="form-control" placeholder=""></input>
+        <input name="end_date" data-format="MM/dd/yyyy" type="text" class="form-control" placeholder=""></input>
         <span class="input-group-addon">
             <span class="add-on">
-                <span class="glyphicon glyphicon-calendar"></span>
             </span>
         </span>
       </div>
