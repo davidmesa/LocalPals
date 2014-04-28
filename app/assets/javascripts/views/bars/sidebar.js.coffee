@@ -10,6 +10,9 @@ class LocalPals.Views.Sidebar extends Backbone.View
     "click #sideSearch": "sideSearch"
 
   initialize: ->
+    @listenTo LocalPals.Vent, "search", @loadSearch
+    searchModel = new LocalPals.Models.BasicSearchInfo()
+    searchModel.fetch({success: @addBasicInfo})
 
   leaveSidebar: ->
     @remove()
@@ -39,4 +42,19 @@ class LocalPals.Views.Sidebar extends Backbone.View
 
   sideSearch: (e) ->
     e.preventDefault()
-    console.log("EntraSearch")
+    model = new LocalPals.Collections.SearchFeed()
+    console.log city: @$('#city option:selected').val()
+    console.log category: @$('#category option:selected').val()
+    model.fetch({
+      data: {name: @$('#name').val(), city: @$('#city option:selected').val(), category: @$('#category option:selected').val()},
+      success: (model)-> LocalPals.Vent.trigger 'search', model
+    })
+
+  addBasicInfo: (model) ->
+    _.each model.attributes['cities'], (city) ->
+      @$('#city').append('<option>'+city.name+'</option>')
+    _.each model.attributes['categories'], (category) ->
+      @$('#category').append('<option>'+category.name+'</option>')
+
+  loadSearch: (model) ->
+    LocalPals.Vent.trigger('displaySearch', model)

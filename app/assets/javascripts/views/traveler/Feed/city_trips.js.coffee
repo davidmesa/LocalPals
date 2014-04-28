@@ -2,7 +2,10 @@ class LocalPals.Views.CityTrips extends Backbone.View
 
   initialize: ->
     @listenTo @collection, "reset", @renderLlegada
-    @collection.fetch({reset: true})
+    if @collection.constructor.name == 'SearchFeed'
+       @renderLlegada()
+    else
+      @collection.fetch({reset: true})
 
   removeFeed: ->
     _.each @childViews, (childView) ->
@@ -12,6 +15,8 @@ class LocalPals.Views.CityTrips extends Backbone.View
 
   render: ->
     $(@el).html('<h1>Loading</h1>')
+    if @collection.constructor.name == 'SearchFeed'
+      @renderLlegada()
     @
 
   renderLlegada: ->

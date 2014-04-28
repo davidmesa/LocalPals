@@ -15,6 +15,8 @@ class LocalPals.Views.CityTrip extends Backbone.View
       childView.removeFeed()  if childView.removeFeed
 
   render: ->
+    console.log("Entra a render")
+    console.log(@model.attributes)
     @$el.html(@template({model: @model.attributes}))
     @childViews = []
     @city_pals = @model.attributes[1]

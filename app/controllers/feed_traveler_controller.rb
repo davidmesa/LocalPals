@@ -4,8 +4,8 @@ class FeedTravelerController < ApplicationController
 
 
   def show
-    user_id = cookies.signed[:user_id]
-    user_id = 3 unless user_id
+    ##user_id = cookies.signed[:user_id]
+    user_id = 3 ##unless user_id
     user = User.find user_id
 
     cities = []
@@ -50,7 +50,7 @@ class FeedTravelerController < ApplicationController
   def addCity
     start_date = params[:start_date]
     end_date = params[:end_date]
-    city = 'Bogota'
+    city = params[:city]
     cityOb= City.where(name: city).first
     unless cityOb
       cityOb = City.new
@@ -59,8 +59,8 @@ class FeedTravelerController < ApplicationController
       cityOb.save
     end
     city_trip = CityTrip.new
-    city_trip.starting_date= start_date
-    city_trip.ending_date= end_date
+    city_trip.starting_date= DateTime.strptime(start_date, '%m/%d/%Y')
+    city_trip.ending_date= DateTime.strptime(end_date, '%m/%d/%Y')
     city_trip.city = cityOb
     city_trip.save
     user = User.find cookies.signed[:user_id]
@@ -82,7 +82,6 @@ class FeedTravelerController < ApplicationController
   end
 
   def addReview
-    puts('BAJAAAA AL CONTROLADOOR EN ADD REVIEW')
     comment = params[:comment]
     user_id = cookies.signed[:user_id]
     user = User.find user_id
@@ -97,4 +96,5 @@ class FeedTravelerController < ApplicationController
     respond_with(review)
 
   end
+
 end

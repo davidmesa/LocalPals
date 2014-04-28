@@ -14,15 +14,15 @@
       <div class="filtro">
          <form>
             <div class="form-group">
-               <input  style="background:#FFF6EB;" type="text" class="form-control" id="nombre" placeholder="Name">
+               <input  style="background:#FFF6EB;" type="text" class="form-control" id="name" placeholder="Name"/>
             </div>
             <div class="form-group">
-               <select class="form-control" style="background:#FFF6EB;" >
+               <select id="city" class="form-control" style="background:#FFF6EB;" >
                   <option>City</option>
                </select>
             </div>
             <div class="form-group">
-               <select class="form-control" style="background:#FFF6EB;">
+               <select id="category" class="form-control" style="background:#FFF6EB;">
                   <option>Category</option>
                </select>
             </div>

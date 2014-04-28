@@ -43,7 +43,8 @@
                          </div>
 
                          <div class="col-md-offset-11">
-                               <button id="agregarciudad" type="submit" class="btn btn-submit btn-lg" style="margin-top:20px; margin-bottom:20px;">Add City</button>
+                           <input type="hidden" id="City"/>
+                               <button id="addCityFeed" type="submit" class="btn btn-submit btn-lg" style="margin-top:20px; margin-bottom:20px;">Add City</button>
                          </div>
 
                     </form>
@@ -139,6 +140,8 @@
              ciudad.trim();
              document.getElementById('lblciudad').value=ciudad;
              document.getElementById('titulo').innerHTML='You has selected '+ ciudad+ ' city';
+             document.getElementById('City').value=ciudad;
+
             }
             else
             {

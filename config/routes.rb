@@ -12,11 +12,15 @@ LocalPals::Application.routes.draw do
 
   get 'traveler/feed' => 'feed_traveler#show'
 
-  get 'traveler/addCity' => 'feed_traveler#addCity'
+  post 'traveler/addCity' => 'feed_traveler#addCity'
 
   get '/traveler/addActivity' => 'feed_traveler#addActivity'
 
   post '/traveler/addReview' => 'feed_traveler#addReview'
+
+  get 'traveler/BasicSearchInfo' => 'search#basicInfo'
+
+  get '/traveler/search' => 'search#search'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
