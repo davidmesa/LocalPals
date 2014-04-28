@@ -18,6 +18,7 @@ class LocalPals.Views.NewActivity extends Backbone.View
     e.preventDefault()
     @model.set name: @$('#name').val()
     @model.set description: @$('#description').val()
+    @model.set recommendations: @$('#recommendations').val()
     @model.set address: @$('#address').val()
     @model.set img: @$('#img-url').val()
     @model.set start_date: @$('#starts').val()

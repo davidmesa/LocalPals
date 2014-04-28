@@ -79,8 +79,6 @@ class UsersController < ApplicationController
       render json: {errors: 'User does not exist'}, :status => 422
     end
 
-
-
   end
 
   private

@@ -5,6 +5,7 @@
             <h3> <span class="glyphicon glyphicon-calendar"></span> Starts: <%= @model.activity.start_date %> </h3>
             <h3> Ends: <%= @model.end_date %> </h3>
             <h3> Description: <%= @model.activity.description %> <br><br>
+            <h3> Recommendations: <%= @model.activity.recommendations %> <br><br>
             </h3>
          </div>
       </div>
