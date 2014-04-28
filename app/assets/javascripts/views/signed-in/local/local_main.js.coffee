@@ -47,7 +47,9 @@ class LocalPals.Views.LocalMain extends Backbone.View
   swapToShowActivity: (model) ->
     activityDetailHeader = new LocalPals.Views.ImageDetails({ model: model })
     @renderHeader(activityDetailHeader)
-    activityDetailsView = new LocalPals.Views.ActivityDetails({ model: model })
+    console.log('MODELO SHOW ACTIVITY:')
+    console.log(model.toJSON())
+    activityDetailsView = new LocalPals.Views.ActivityDetails({ model: model})
     @renderContent(activityDetailsView)
 
   swapToLocalIndex: ->

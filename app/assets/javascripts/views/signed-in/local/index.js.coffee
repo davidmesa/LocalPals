@@ -19,7 +19,7 @@ class LocalPals.Views.LocalIndex extends Backbone.View
     @
 
   renderActivity: (model) ->
-    console.log(model)
+    console.log(model.toJSON())
     v = new LocalPals.Views.LocalActivity({ model: model })
     @$('#local-activities').append(v.render().el)
     console.log("render activity")

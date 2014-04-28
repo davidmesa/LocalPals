@@ -1,3 +1,3 @@
 <div id="imagen" class="col-md-4">
-    <a id="showDetails"><img src="<%= @model.img %>" class="img-activity"/></a>
+    <a id="showDetails"><img src="<%= @model.activity.img %>" class="img-activity"/></a>
 </div>

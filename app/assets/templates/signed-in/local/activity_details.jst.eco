@@ -1,29 +1,18 @@
       <div id="activity-content" class="row col-md-11">
          <div class="col-md-offset-1" style="margin-top:15%">
-            <nombre> <%= @model.name %> </nombre>
-            <h3> <span class="glyphicon glyphicon-map-marker"></span> Adress: <%= @model.address %> </h3>
-            <h3> <span class="glyphicon glyphicon-calendar"></span> Starts: <%= @model.start_date %> </h3>
+            <nombre> <%= @model.activity.name %> </nombre>
+            <h3> <span class="glyphicon glyphicon-map-marker"></span> Adress: <%= @model.activity.address %> </h3>
+            <h3> <span class="glyphicon glyphicon-calendar"></span> Starts: <%= @model.activity.start_date %> </h3>
             <h3> Ends: <%= @model.end_date %> </h3>
-            <h3> Description: <%= @model.description %> <br><br>
+            <h3> Description: <%= @model.activity.description %> <br><br>
             </h3>
          </div>
       </div>
       <div id="attending" class="row col-md-10">
-         <br><br>
-         <nombre> Attending </nombre>
-         <br><br>
-         <div class="col-md-2">
-            <img src="/traveler1.png" alt="Responsive image" class="img-local"/>
-         </div>
-         <div class="col-md-2">
-            <img src="/traveler2.png" alt="Responsive image" class="img-local"/>
-         </div>
-         <div class="col-md-2">
-            <img src="/traveler3.png" alt="Responsive image" class="img-local"/>
-         </div>
-         <div class="col-md-2">
-            <img src="/traveler4.png" alt="Responsive image" class="img-local"/>
-         </div>
+        <br><br>
+        <nombre> Attending </nombre>
+        <br><br>
+        <div id = "attending-travelers"></div>
       </div>
       <div id="contact" class="row col-md-10 col-md-offset-4">
          <p>

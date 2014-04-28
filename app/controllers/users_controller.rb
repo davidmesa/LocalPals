@@ -43,7 +43,11 @@ class UsersController < ApplicationController
       traveler.user = user
       traveler.save()
 
-      respond_with(user)
+      #respond_with(user)
+      response = {}
+      response['user'] = user
+      response['local'] = user.local
+      render :json => response
     end
   end
 

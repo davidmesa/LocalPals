@@ -1,0 +1,3 @@
+<div class="col-md-2">
+    <img src="<%= @model.img %>" alt="Responsive image" class="img-local"/>
+</div>
