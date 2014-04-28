@@ -14,8 +14,8 @@ class LocalPals.Routers.MainRouter extends Backbone.Router
     #@listenTo LocalPals.Vent, "addCity", @agregarciudad
     #@listenTo LocalPals.Vent, "login", @feed
     #@listenTo LocalPals.Vent, "activity:create", @activities
-    @listenTo LocalPals.Vent, "activity:show", @activityShow
-    @listenTo LocalPals.Vent, "activity:traveler:show", @activityTravelerDetails
+    #@listenTo LocalPals.Vent, "activity:show", @activityShow
+    #@listenTo LocalPals.Vent, "activity:traveler:show", @activityTravelerDetails
 
   index: ->
     #LocalPals.Vent.trigger("GoHome")

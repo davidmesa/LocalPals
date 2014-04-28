@@ -14,6 +14,8 @@ LocalPals::Application.routes.draw do
 
   get 'traveler/addCity' => 'feed_traveler#addCity'
 
+  get '/traveler/addActivity' => 'feed_traveler#addActivity'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

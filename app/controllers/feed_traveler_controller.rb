@@ -28,6 +28,8 @@ class FeedTravelerController < ApplicationController
         responseParts = {}
         responseParts['activity'] = activity
         responseParts['local'] = activity.local
+        responseParts['city_trip'] = CityTrip.find_by('traveler_id = :trav_id AND city_id = :cit_id',
+                                                    {trav_id: user.traveler.id, cit_id: activity.local.user.city.id})
         response[activity.local.user.city.name] << responseParts
         activities_ids[activity.id] = 'ok'
       end
@@ -58,4 +60,16 @@ class FeedTravelerController < ApplicationController
     render :json => city_trip
   end
 
+  def addActivity
+    activityId = params[:activity_id]
+    acticity = Activity.find activityId
+
+    cityTripId = params[:city_id]
+    cityTrip = CityTrip.find cityTripId
+
+    cityTrip.activities << acticity
+
+    respond_with(acticity)
+
+  end
 end

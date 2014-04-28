@@ -6,6 +6,7 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
     @listenTo LocalPals.Vent, "show:activities", @swapToLocal
     @listenTo LocalPals.Vent, 'addCity', @addCity
     @listenTo LocalPals.Vent, "renderMain", @renderMain
+    @listenTo LocalPals.Vent, "activity:traveler:show", @swapToFeedActivityDetails
 
   addCity: ->
     @renderMain(new LocalPals.Views.TravelerCity())
@@ -39,3 +40,7 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
     @renderMain(localMainView)
     #activitiesView = new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()})
     #@renderMain(activitiesView)
+
+  swapToFeedActivityDetails: (model) ->
+    activityDetailsView = new LocalPals.Views.CityPalDetails({ model: model})
+    @renderMain(activityDetailsView)

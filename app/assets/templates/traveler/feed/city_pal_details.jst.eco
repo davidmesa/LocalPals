@@ -1,7 +1,7 @@
 <div id="content" class="content-activity">
   <div class="col-md-offset-1">
     <div id="activity-header" class="row">
-      <div id="imagen" class="col-md-3"> <img src="/act1.jpg" alt="Responsive image" class="img-activity" />
+      <div id="imagen" class="col-md-3"> <img src="<%= @model.activity.img %>" alt="Responsive image" class="img-activity" />
         <p>
           <button id="btn-going" type="button" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Going</button>
         </p>
