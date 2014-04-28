@@ -38,6 +38,7 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
     localHeaderView.setUser(@user)
     localMainView.initViews(localMainContent, localHeaderView)
     @renderMain(localMainView)
+    Backbone.history.navigate("activities/")
     #activitiesView = new LocalPals.Views.LocalIndex({collection: new LocalPals.Collections.Activities()})
     #@renderMain(activitiesView)
 
