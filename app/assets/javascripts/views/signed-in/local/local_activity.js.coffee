@@ -13,4 +13,4 @@ class LocalPals.Views.LocalActivity extends Backbone.View
   showDetails: (e) ->
     e.preventDefault()
     LocalPals.Vent.trigger "show:activity", @model
-    #Backbone.history.navigate("activities/" + @model.id)
+    Backbone.history.navigate("activities/" + @model.attributes.activity.id)

@@ -27,6 +27,7 @@ class LocalPals.Views.LocalIndex extends Backbone.View
   newActivity: (e) ->
     e.preventDefault()
     LocalPals.Vent.trigger "new:activity"
+    Backbone.history.navigate("activities/new")
 
   addToCollection: (model) ->
     @collection.add model
