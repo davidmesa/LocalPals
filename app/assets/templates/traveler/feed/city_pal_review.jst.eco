@@ -1,0 +1,6 @@
+<div class="review row">
+    <div class="col-md-2"> <img src="<%= @model.travelerImg %>" alt="Responsive image" class="img-local"/> </div>
+    <div class="comment col-md-9">
+      <h3> <%= @model.review.comment %> </h3>
+    </div>
+</div>

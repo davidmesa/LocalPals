@@ -30,6 +30,14 @@ class FeedTravelerController < ApplicationController
         responseParts['local'] = activity.local
         responseParts['city_trip'] = CityTrip.find_by('traveler_id = :trav_id AND city_id = :cit_id',
                                                     {trav_id: user.traveler.id, cit_id: activity.local.user.city.id})
+        responseParts['reviews'] = []
+        reviews = activity.local.reviews
+        reviews.each do |review|
+          reviewParts = {}
+          reviewParts['review'] = review
+          reviewParts['travelerImg'] = review.traveler.user.local.img
+          responseParts['reviews'] << reviewParts
+        end
         response[activity.local.user.city.name] << responseParts
         activities_ids[activity.id] = 'ok'
       end
@@ -70,6 +78,23 @@ class FeedTravelerController < ApplicationController
     cityTrip.activities << acticity
 
     respond_with(acticity)
+
+  end
+
+  def addReview
+    puts('BAJAAAA AL CONTROLADOOR EN ADD REVIEW')
+    comment = params[:comment]
+    user_id = cookies.signed[:user_id]
+    user = User.find user_id
+    local_id = params[:local_id]
+
+    review = Review.new
+    review.comment = comment
+    review.local = Local.find local_id
+    review.traveler = user.traveler
+    review.save()
+
+    respond_with(review)
 
   end
 end

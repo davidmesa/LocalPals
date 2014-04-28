@@ -30,20 +30,14 @@
     </div>
     <div id="reviews" class="col-md-10">
       <nombre> Reviews </nombre>
-      <div class="review row">
-        <div class="col-md-2"> <img src="/traveler1.png" alt="Responsive image" class="img-local"/> </div>
-        <div class="comment col-md-9">
-          <h3> I am so grateful that my time in Bogota included the opportunity to be shown around
-            by locals. What a great way to get  valuable insights and get to meet the people who
-            live there!</h3>
-        </div>
-      </div>
-      <div class="review row">
-        <div class="col-md-2"> <img src="/traveler2.png" alt="Responsive image" class="img-local"/> </div>
-        <div class="comment col-md-9">
-          <h3> I had an amazing time with Maca! It was just amazing to see the real face of Bogotá! </h3>
-        </div>
-      </div>
+      <div id="reviews-local"></div>
+      <br><br>
+      <form role="form">
+        <div class="bubble"><textarea id ="comment" class="form-control" rows="5" placeholder="Tell us about your experience with your LocalPal..."></textarea></div>
+        <br>
+        <button type="submit" id="submit-review" class="btn btn-success">Comment</button>
+        <br><br>
+      </form>
     </div>
   </div>
 </div>
