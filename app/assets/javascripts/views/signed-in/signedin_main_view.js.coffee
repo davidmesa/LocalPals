@@ -43,5 +43,5 @@ class LocalPals.Views.SignedInMainView extends Backbone.View
     #@renderMain(activitiesView)
 
   swapToFeedActivityDetails: (model) ->
-    activityDetailsView = new LocalPals.Views.CityPalDetails({ model: model})
+    activityDetailsView = new LocalPals.Views.CityPalDetails({ model: model,  collection: new LocalPals.Collections.Reviews })
     @renderMain(activityDetailsView)

@@ -7,7 +7,7 @@ class LocalPals.Views.LocalIndex extends Backbone.View
 
   initialize: ->
     @listenTo @collection, "reset", @render
-    @listenTo LocalPals.Vent, "project:create", @addToCollection
+    @listenTo LocalPals.Vent, "activity:create", @addToCollection
     @listenTo @collection,"add", @renderActivity
     @collection.fetch({reset: true})
 

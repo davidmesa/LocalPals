@@ -1,4 +1,4 @@
 <div id="imagen">
   <a id="activityDetails" href=""><img src="<%= @model.activity.img %>" alt="Responsive image" class="img-activity"></a>
-  <img src="<%= @model.local.img %>" alt="Responsive image" class="img-pal">
+  <img src="<%= @model.local.img %>" alt="Responsive image" class="img-pal-sin-boton">
 </div>

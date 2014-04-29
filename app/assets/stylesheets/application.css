@@ -90,7 +90,8 @@ body{
     margin-right:auto;
     width:90%;
     margin-top:15px;
-    padding-left: 25px;
+    padding-left: 5%;
+    padding-top: 3%;
 }
 
 .pals #imagen:hover .img-activity{
@@ -242,6 +243,18 @@ nombre, .nombre
 
 .img-pal{
     margin-left:55%;
+    position:relative;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+}
+
+.img-pal-sin-boton{
+    margin-left:50%;
+    margin-top:45%;
     position:relative;
     border-radius: 50%;
     height: 150px;

@@ -4,8 +4,8 @@ class FeedTravelerController < ApplicationController
 
 
   def show
-    ##user_id = cookies.signed[:user_id]
-    user_id = 3 ##unless user_id
+    user_id = cookies.signed[:user_id]
+    user_id = 3 unless user_id
     user = User.find user_id
 
     cities = []
@@ -30,14 +30,14 @@ class FeedTravelerController < ApplicationController
         responseParts['local'] = activity.local
         responseParts['city_trip'] = CityTrip.find_by('traveler_id = :trav_id AND city_id = :cit_id',
                                                     {trav_id: user.traveler.id, cit_id: activity.local.user.city.id})
-        responseParts['reviews'] = []
-        reviews = activity.local.reviews
-        reviews.each do |review|
-          reviewParts = {}
-          reviewParts['review'] = review
-          reviewParts['travelerImg'] = review.traveler.user.local.img
-          responseParts['reviews'] << reviewParts
-        end
+        #responseParts['reviews'] = []
+        #reviews = activity.local.reviews
+        #reviews.each do |review|
+        #  reviewParts = {}
+        #  reviewParts['review'] = review
+        #  reviewParts['travelerImg'] = review.traveler.user.local.img
+        #  responseParts['reviews'] << reviewParts
+        #end
         response[activity.local.user.city.name] << responseParts
         activities_ids[activity.id] = 'ok'
       end
@@ -93,7 +93,31 @@ class FeedTravelerController < ApplicationController
     review.traveler = user.traveler
     review.save()
 
-    respond_with(review)
+
+    reviewParts = {}
+    reviewParts['review'] = review
+    reviewParts['travelerImg'] = review.traveler.user.local.img
+
+    render :json => reviewParts
+
+  end
+
+  def showReview
+    puts('BAJAAAAA AL CONTROLADOOOR!!!! EN SHOW REVIEW')
+
+    activity = Activity.find(params[:activity_id])
+
+        responseParts = []
+        reviews = activity.local.reviews
+        reviews.each do |review|
+          reviewParts = {}
+          reviewParts['review'] = review
+          reviewParts['travelerImg'] = review.traveler.user.local.img
+          responseParts << reviewParts
+        end
+
+
+    render :json => responseParts
 
   end
 
