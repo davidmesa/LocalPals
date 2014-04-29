@@ -5,7 +5,7 @@
                     <h1 id="titulo">Select your city of destiny: </h1>
                     <!-- Contenido MAPAS, label que contiene la ciudad elegida, en caso de no funcionar. El titulo podría tener la información necesaria
                     haciendo previamente, un split por : para tomar solo la segunda parte del texto  -->
-                    <label id="lblciudad"> </label>
+
                     <div class="img">
                         <div id="map-canvas"></div>
                     </div>
@@ -44,6 +44,9 @@
 
                          <div class="col-md-offset-11">
                            <input type="hidden" id="City"/>
+                           <input type="hidden" id="Latitude"/>
+                           <input type="hidden" id="Longitude"/>
+                           <input type="hidden" id="Country"/>
                                <button id="addCityFeed" type="submit" class="btn btn-submit btn-lg" style="margin-top:20px; margin-bottom:20px;">Add City</button>
                          </div>
 
@@ -129,7 +132,16 @@
 
     function ubicacion(e)
     {
-      geocoder.geocode({'latLng': e.latLng}, function(results, status) {
+     if(marker==null)
+            {
+               marker = new google.maps.Marker({
+               position: e.latLng,
+               animation: google.maps.Animation.DROP,
+               icon:'https://dl.dropboxusercontent.com/u/6372527/m.png',
+               map: map
+               });
+            }
+      geocoder.geocode({'latLng':e.latLng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK)
         {
         var rta= results[1].formatted_address;
@@ -138,31 +150,34 @@
             {
              var ciudad=arreglo[arreglo.length-3];
              ciudad.trim();
-             document.getElementById('lblciudad').value=ciudad;
-             document.getElementById('titulo').innerHTML='You has selected '+ ciudad+ ' city';
+             document.getElementById('titulo').innerHTML='You has selected '+ ciudad+ ' city ';
              document.getElementById('City').value=ciudad;
+             document.getElementById('Latitude').value=e.latLng.lat();
+             document.getElementById('Longitude').value=e.latLng.lng();
+             document.getElementById('Country').value=arreglo[arreglo.lenght];
+             marker.setIcon('https://dl.dropboxusercontent.com/u/6372527/m.png');
+
 
             }
             else
             {
                  document.getElementById('titulo').innerHTML='Try another location, you have to select a city';
+                 marker.setIcon('https://dl.dropboxusercontent.com/u/6372527/w.png');
             }
 
-        if(marker==null)
-        {
-           marker = new google.maps.Marker({
-           position: e.latLng,
-           animation: google.maps.Animation.DROP,
-           icon:'https://dl.dropboxusercontent.com/u/6372527/c.png',
-           map: map
-           });
-        }
-        else
-        {marker.setAnimation(google.maps.Animation.DROP);
-        marker.setPosition(e.latLng);}
+
+
 
         }
-        else {   document.getElementById('titulo').innerHTML='Sorry, you have to select a city within our boundaries ';  }
+        else
+        {
+         document.getElementById('titulo').innerHTML='Sorry, you have to select a city within our boundaries ';
+         marker.setIcon('https://dl.dropboxusercontent.com/u/6372527/s.png');
+
+          }
+
+          marker.setAnimation(google.maps.Animation.DROP);
+          marker.setPosition(e.latLng);
       });
     }
 
