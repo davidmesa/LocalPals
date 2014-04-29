@@ -17,25 +17,18 @@ class SearchController < ApplicationController
     puts params
 
     if(city && params[:name] && category)
-      puts 1
       activities = Activity.joins(local: {user: :city}).joins(:interests).where('cities.name' => city).where(name: params[:name]).where('interests.name' => category)
     elsif city && params[:name]
-      puts 2
       activities = Activity.joins(local: {user: :city}).where('cities.name' => city).where(name: params[:name])
     elsif city && category
-      puts 3
       activities = Activity.joins(local: {user: :city}).joins(:interests).where('cities.name' => city).where('interests.name' => category)
     elsif params[:name] && category
-      puts 4
       activities = Activity.joins(:interests).where(name: params[:name]).where('interests.name' => category)
     elsif city
-      puts 5
       activities = Activity.joins(local: {user: :city}).where('cities.name' => city)
     elsif params[:name]
-      puts 6
       activities = Activity.where(name: params[:name])
     elsif category
-      puts 7
       activities = Activity.joins(:interests).where('interests.name' => category)
     end
 
